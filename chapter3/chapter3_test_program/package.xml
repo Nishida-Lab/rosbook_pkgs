@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>chapter3_test_program</name>
+  <name>chapter3</name>
   <version>0.0.0</version>
-  <description>The chapter3_test_program package</description>
+  <description>The chapter3 package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
@@ -19,7 +19,7 @@
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/chapter3_test_program</url> -->
+  <!-- <url type="website">http://wiki.ros.org/chapter3</url> -->
 
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->
