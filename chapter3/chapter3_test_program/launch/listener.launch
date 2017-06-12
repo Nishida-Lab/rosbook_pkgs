@@ -1,0 +1,8 @@
+<launch>
+  <param name="param_name" value="n_param" />
+  <node name="l_listener_node"
+        pkg="chapter3_test_program"
+        type="listener.py" >
+    <param name="private_param_name" value="p_param"/>
+  </node>
+</launch>
