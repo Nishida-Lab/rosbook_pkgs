@@ -1,0 +1,25 @@
+<launch>
+  <!-- including launch files-->
+  <include file="$(find chapter3)/launch/talker.launch" />
+  <include file="$(find chapter3)/launch/listener.launch" />
+  <!-- using namespace -->
+  <group ns="namespace" >
+    <include file="$(find chapter3)/launch/talker.launch" />
+    <include file="$(find chapter3)/launch/listener.launch" />
+  </group>
+  <!-- using 2 namespaces -->
+  <group ns="namespace_a" >
+    <group>
+      <remap from="topicname" to="/global_topic" />
+      <include file="$(find chapter3)/launch/talker.launch" />
+    </group>
+    <include file="$(find chapter3)/launch/listener.launch" />
+  </group>
+  <group ns="namespace_b" >
+    <include file="$(find chapter3)/launch/talker.launch" />
+    <group>
+      <remap from="topicname" to="/global_topic" />
+      <include file="$(find chapter3)/launch/listener.launch" />
+    </group>
+  </group>
+</launch>

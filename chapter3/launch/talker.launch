@@ -1,6 +1,6 @@
 <launch>
   <node name="l_talker_node"
-        pkg="chapter3_test_program"
+        pkg="chapter3"
         type="talker.py" >
   </node>
 </launch>
