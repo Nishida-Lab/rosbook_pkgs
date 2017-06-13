@@ -31,6 +31,9 @@ target_link_libraries(rqtplot_example ${catkin_LIBRARIES})
 add_executable(rosbag_example_publisher src/rosbag_example_publisher.cpp)
 target_link_libraries(rosbag_example_publisher ${catkin_LIBRARIES})
 
+add_executable(rosbag_example_subscriber src/rosbag_example_subscriber.cpp)
+target_link_libraries(rosbag_example_subscriber ${catkin_LIBRARIES})
+
 #############
 ## Install ##
 #############
