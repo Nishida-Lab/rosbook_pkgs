@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>fourth_robot_control</name>
+  <version>1.0.0</version>
+  <description>The fourth_robot_control package</description>
+
+
+  <maintainer email="groadpg@gmail.com">RyodoTanaka</maintainer>
+  <license>BSD</license>
+  <url type="repository">http://github.com/CIR-KIT/fourth_robot_pkg</url>
+  
+  <author email="groadpg@gmail.com">RyodoTanaka</author>
+
+  <buildtool_depend>catkin</buildtool_depend>  
+  <run_depend>controller_manager</run_depend>
+  <run_depend>actionlib</run_depend>
+  <run_depend>actionlib_msgs</run_depend>
+  <run_depend>control_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+
+</package>

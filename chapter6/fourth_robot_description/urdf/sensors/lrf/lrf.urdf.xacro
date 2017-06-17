@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find fourth_robot_description)/urdf/common.xacro"/>
+  <xacro:include filename="$(find fourth_robot_description)/urdf/sensors/lrf/lrf.gazebo.xacro"/>
+
+  <xacro:macro name="lrf_v0" params="prefix parent *joint_origin">
+	<joint name="${prefix}_lrf_joint" type="fixed">
+	  <insert_block name="joint_origin"/>
+	  <parent link="${parent}"/>
+	  <child link="${prefix}_lrf_link"/>
+	</joint>
+
+	<link name="${prefix}_lrf_link">
+	  <visual>
+		<geometry>
+		  <mesh filename="package://fourth_robot_description/meshes/DAE/sensors/${prefix}_lrf/${prefix}_lrf.dae"/>
+		</geometry>
+	  </visual>
+	  <collision>
+		<geometry>
+		  <mesh filename="package://fourth_robot_description/meshes/STL/sensors/${prefix}_lrf/${prefix}_lrf.stl"/>
+		</geometry>
+	  </collision>
+	  <inertial>
+		<origin xyz="0 0 -0.0164"/>
+		<box_inertial mass="0.4" height="0.07" width="0.07" depth="0.08"/>
+	  </inertial>
+	</link>
+  </xacro:macro>
+
+</robot>

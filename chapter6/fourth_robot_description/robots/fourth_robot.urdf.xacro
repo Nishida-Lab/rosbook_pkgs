@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<robot name="fourth_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find fourth_robot_description)/urdf/base/base.urdf.xacro"/>
+  <xacro:include filename="$(find fourth_robot_description)/urdf/wheel/wheel.urdf.xacro"/>
+  <xacro:include filename="$(find fourth_robot_description)/urdf/sensors/gps/gps.urdf.xacro"/>
+  <xacro:include filename="$(find fourth_robot_description)/urdf/sensors/gim30/gim30.urdf.xacro"/>
+  <xacro:include filename="$(find fourth_robot_description)/urdf/sensors/lrf/lrf.urdf.xacro"/>
+
+  <!-- =============== Link & Joint =============== -->
+  <!-- Base -->
+  <link name="base_footprint"/>
+  <xacro:base_v0 parent="base_footprint">
+	<origin xyz="0 0 0.20316"/>
+  </xacro:base_v0>
+
+  <!-- Wheel -->
+  <!-- Right Wheel -->
+  <xacro:wheel_v0 prefix="right" parent="base_link">
+	<origin xyz="0 -0.214375 0"/>
+	<axis xyz="0 1 0"/>
+  </xacro:wheel_v0>
+  <!-- Left Wheel -->
+  <xacro:wheel_v0 prefix="left" parent="base_link">
+	<origin xyz="0 0.214375 0" rpy="0 0 ${M_PI}"/>
+	<axis xyz="0 -1 0"/>
+  </xacro:wheel_v0>
+
+  <!-- Sensors -->
+  <!-- GPS -->
+  <xacro:gps_v0 parent="base_link">
+	<origin xyz="-0.06229 0 0.420552" rpy="0 0 -${M_PI}"/>
+  </xacro:gps_v0>
+
+  <!-- Gim30 -->
+  <xacro:gim30_v0 parent="base_link">
+  	<origin xyz="0.12395931 0 0.24578237"/>
+  </xacro:gim30_v0>
+
+  <!-- Front LRF -->
+  <xacro:lrf_v0 prefix="front" parent="base_link">
+  	<origin xyz="0.2215 0 -0.02395"/>
+  </xacro:lrf_v0>
+
+  <!-- Rear LRF -->
+  <xacro:lrf_v0 prefix="rear" parent="base_link">
+  	<origin xyz="-0.452 0 -0.04025" rpy="0 -${M_PI} 0"/>
+  </xacro:lrf_v0>
+
+  <link name="lrf_link"/>
+  <joint name="lrf_link_joint" type="fixed">
+	<parent link="base_link"/>
+	<child link="lrf_link"/>
+	<origin xyz="0 0 -0.0321"/>
+  </joint>
+
+  <link name="imu_link"/>
+  <joint name="imu_link_joint" type="fixed">
+	<parent link="base_link"/>
+	<child link="imu_link"/>
+	<origin xyz="0 0 0.051" rpy="0 0 0" />
+  </joint>
+
+  <!-- ===============  Transmission =============== -->
+  <xacro:wheel_trans_v0 prefix="right"/>
+  <xacro:wheel_trans_v0 prefix="left"/>
+
+  <!-- =============== Gazebo =============== -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <!-- <robotNamespace>fourth_robot</robotNamespace> -->
+    </plugin>
+  </gazebo>
+
+  <!-- Base -->
+  <xacro:base_gazebo_v0/>
+
+  <!-- Wheel -->
+  <xacro:wheel_gazebo_v0 prefix="right"/>
+  <xacro:wheel_gazebo_v0 prefix="left"/>
+  <xacro:wheel_gazebo_control_v0 rate="25"/>
+
+  <!-- LRF -->
+  <xacro:lrf_gazebo_v0 prefix="front"
+					   min_rad="-1.65806278939" max_rad="1.65806278939"
+					   min_range="0.10" max_range="60.0"/>
+  <xacro:lrf_gazebo_v0 prefix="rear"
+					   min_rad="-2.35619449019" max_rad="2.35619449019"
+					   min_range="0.10" max_range="60.0"/>
+  
+</robot>
