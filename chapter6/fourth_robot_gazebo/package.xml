@@ -4,12 +4,14 @@
   <version>1.0.0</version>
   <description>The fourth_robot_gazebo package</description>
 
-  <maintainer email="groadpg@gmail.com">RyodoTanaka</maintainer>
-  <license>BSD</license>
-  <url type="repository">http://github.com/CIR-KIT/fourth_robot_pkg</url>
-  
-  <author email="groadpg@gmail.com">RyodoTanaka</author>
+  <maintainer email="nishidatakeshilab@gmail.com">Nishida Lab</maintainer>
+  <author email="k104073r@mail.kyutech.jp">RyodoTanaka</author>
 
+  <license>TODO</license>
+  
+  <url type="repository">https://github.com/Nishida-Lab/rosbook_pkgs.git</url>
+  <url type="bugtracker">https://github.com/Nishida-Lab/rosbook_pkgs/issues</url>
+  
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>ros_control</run_depend>
   <run_depend>gazebo_ros_control</run_depend>
