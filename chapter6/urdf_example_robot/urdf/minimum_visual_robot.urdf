@@ -1,0 +1,17 @@
+<robot name="minimum_visual_robot">
+  <link name="Link1"/>
+  <joint name="Joint1" type="fixed">
+	<parent link="Link1"/>
+	<child link="Link2"/>
+  </joint>
+
+  <link name="Link2">
+	<visual>
+	  <geometry>
+		<!-- If it's COLLADA file -->
+		<mesh filename="package://urdf_example_robot/meshes/COLLADA/test.dae"/>
+	  </geometry>
+	</visual>
+  </link>
+
+</robot>

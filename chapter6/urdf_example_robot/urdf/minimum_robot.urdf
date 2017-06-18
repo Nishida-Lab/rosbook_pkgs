@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot name="minimum_robot">
+  <link name="Link1"/>
+  <joint name="Joint1" type="fixed">
+	<parent link="Link1"/>
+	<child link="Link2"/>
+  </joint>
+
+  <link name="Link2"/>
+  <joint name="Joint2" type="fixed">
+	<parent link="Link2"/>
+	<child link="Link3"/>
+  </joint>
+
+  <link name="Link3"/>
+  <joint name="Joint3" type="fixed">
+	<parent link="Link3"/>
+	<child link="Link4"/>
+  </joint>
+
+  <link name="Link4"/>
+</robot>
