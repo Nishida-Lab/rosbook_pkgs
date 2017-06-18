@@ -17,6 +17,7 @@
   <run_depend>fourth_robot_control</run_depend>
   <run_depend>fourth_robot_description</run_depend>
   <run_depend>fourth_robot_gazebo</run_depend>
+  <run_depend>urdf_example_robot</run_depend>
   
   <export>
 	<metapackage />
