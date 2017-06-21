@@ -24,5 +24,8 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+add_executable(tf_broadcaster src/tf_broadcaster.cpp)
+target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
+
 add_executable(tf2_broadcaster src/tf2_broadcaster.cpp)
 target_link_libraries(tf2_broadcaster ${catkin_LIBRARIES})
