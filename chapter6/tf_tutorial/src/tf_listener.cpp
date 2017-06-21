@@ -13,7 +13,7 @@ int main(int argc, char** argv)
   while(ros::ok()){
 	tf::StampedTransform transform;
 	try{
-	  listner.lookupTransform("/frame1", "/frame2",
+	  listner.lookupTransform("frame1", "frame2",
 							  ros::Time(0), transform);
 	}
 	catch (tf::TransformException &ex){
