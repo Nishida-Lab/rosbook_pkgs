@@ -29,3 +29,6 @@ target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
 
 add_executable(tf2_broadcaster src/tf2_broadcaster.cpp)
 target_link_libraries(tf2_broadcaster ${catkin_LIBRARIES})
+
+add_executable(tf2_static_broadcaster src/tf2_static_broadcaster.cpp)
+target_link_libraries(tf2_static_broadcaster ${catkin_LIBRARIES})
