@@ -36,3 +36,6 @@ target_link_libraries(tf2_static_broadcaster ${catkin_LIBRARIES})
 
 add_executable(tf_listener src/tf_listener.cpp)
 target_link_libraries(tf_listener ${catkin_LIBRARIES})
+
+add_executable(tf2_listener src/tf2_listener.cpp)
+target_link_libraries(tf2_listener ${catkin_LIBRARIES})
