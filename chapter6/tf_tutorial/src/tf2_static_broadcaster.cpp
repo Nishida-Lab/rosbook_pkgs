@@ -6,7 +6,7 @@
 
 int main(int argc, char** argv)
 {
-  ros::init(argc, argv, "tf2_broadcaster");
+  ros::init(argc, argv, "tf2_static_broadcaster");
 
   ros::NodeHandle n;
 
