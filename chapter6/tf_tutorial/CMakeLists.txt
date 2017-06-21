@@ -3,8 +3,9 @@ project(tf_tutorial)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
-  tf2
   tf
+  tf2
+  tf2_ros
 )
 
 catkin_package(
@@ -32,3 +33,6 @@ target_link_libraries(tf2_broadcaster ${catkin_LIBRARIES})
 
 add_executable(tf2_static_broadcaster src/tf2_static_broadcaster.cpp)
 target_link_libraries(tf2_static_broadcaster ${catkin_LIBRARIES})
+
+add_executable(tf_listener src/tf_listener.cpp)
+target_link_libraries(tf_listener ${catkin_LIBRARIES})
