@@ -32,6 +32,7 @@ int main(int argc, char** argv)
 	ts.transform.rotation.w = q.w();
 
 	tb.sendTransform(ts);
+	ROS_INFO("Transform Published");
 	
 	r.sleep();
   }
