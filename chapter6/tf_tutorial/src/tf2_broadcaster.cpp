@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 	ts.header.frame_id = "frame1";
 	ts.child_frame_id = "frame2";
 	tf2::Vector3 v;
-	v.setValue(0, 0. 1.0);
+	v.setValue(0, 0, 1.0);
 	ts.transform.translation.x = v.x();
 	ts.transform.translation.y = v.y();
 	ts.transform.translation.z = v.z();
