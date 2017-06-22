@@ -11,9 +11,9 @@ if __name__ == '__main__':
     r = rospy.Rate(1.0)
     
     while not rospy.is_shutdown():
-        origin = (0, 0, 1.0)
+        translation = (0, 0, 1.0)
         rotation = tf.transformations.quaternion_from_euler(0,0,0, axes='sxyz')
-        br.sendTransform(origin, rotation,
+        br.sendTransform(translation, rotation,
                          rospy.Time.now(),'frame2', 'frame1')
         rospy.loginfo('Transform Published')
         r.sleep()
