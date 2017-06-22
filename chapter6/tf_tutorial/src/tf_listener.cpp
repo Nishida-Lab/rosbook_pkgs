@@ -29,6 +29,7 @@ int main(int argc, char** argv)
 	translation.setValue(transform.getOrigin().x(),
 						 transform.getOrigin().y(),
 						 transform.getOrigin().z());
+	
 	tf::Quaternion rotation;
 	rotation.setValue(transform.getRotation().x(),
 					  transform.getRotation().y(),
@@ -39,7 +40,6 @@ int main(int argc, char** argv)
 	double roll, pitch, yaw;
 	m.getRPY(roll, pitch, yaw);
 
-	
 	ROS_INFO("\n=== Got Transform ===\n"
 			 " Translation\n"
 			 " x : %f\n y : %f\n z : %f\n"
