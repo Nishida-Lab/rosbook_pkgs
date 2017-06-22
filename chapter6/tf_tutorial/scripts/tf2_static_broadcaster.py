@@ -8,7 +8,7 @@ from geometry_msgs.msg import Vector3
 from geometry_msgs.msg import Quaternion
 
 if __name__ == '__main__':
-    rospy.init_node('tf_broadcaster')
+    rospy.init_node('tf2_static_broadcaster')
 
     br = tf2_ros.StaticTransformBroadcaster()
 
