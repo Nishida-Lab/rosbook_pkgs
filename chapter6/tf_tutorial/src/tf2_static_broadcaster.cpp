@@ -16,17 +16,19 @@ int main(int argc, char** argv)
   ts.header.stamp = ros::Time::now();
   ts.header.frame_id = "frame1";
   ts.child_frame_id = "frame2";
-  tf2::Vector3 v;
-  v.setValue(0, 0, 1.0);
-  ts.transform.translation.x = v.x();
-  ts.transform.translation.y = v.y();
-  ts.transform.translation.z = v.z();
-  tf2::Quaternion q;
-  q.setRPY(0, 0, 0);
-  ts.transform.rotation.x = q.x();
-  ts.transform.rotation.y = q.y();
-  ts.transform.rotation.z = q.z();
-  ts.transform.rotation.w = q.w();
+  
+  tf2::Vector3 translation;
+  translation.setValue(0, 0, 1.0);
+  ts.transform.translation.x = translation.x();
+  ts.transform.translation.y = translation.y();
+  ts.transform.translation.z = translation.z();
+ 
+  tf2::Quaternion rotation;
+  rotation.setRPY(0, 0, 0);
+  ts.transform.rotation.x = rotation.x();
+  ts.transform.rotation.y = rotation.y();
+  ts.transform.rotation.z = rotation.z();
+  ts.transform.rotation.w = rotation.w();
 
   tb.sendTransform(ts);
   
