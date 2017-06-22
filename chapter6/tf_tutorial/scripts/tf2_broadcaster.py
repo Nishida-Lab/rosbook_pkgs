@@ -20,8 +20,8 @@ if __name__ == '__main__':
         t.header.frame_id = 'frame1'
         t.child_frame_id = 'frame2'
         
-        origin = Vector3(0,0,1.0)
-        t.transform.translation = origin
+        translation = Vector3(0,0,1.0)
+        t.transform.translation = translation
         
         q = tf_conversions.transformations.quaternion_from_euler(0,0,0,'sxyz')
         rotation = Quaternion(*q)
