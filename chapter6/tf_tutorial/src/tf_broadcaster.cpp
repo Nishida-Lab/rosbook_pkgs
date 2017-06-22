@@ -15,12 +15,13 @@ int main(int argc, char** argv)
   ros::Rate r(1.0);
   
   while(ros::ok()){	
-	tf::Vector3 v;
-	v.setValue(0, 0, 1.0);
-	st.setOrigin(v);
-	tf::Quaternion q;
-	q.setRPY(0, 0, 0);
-	st.setRotation(q);
+	tf::Vector3 translation;
+	translation.setValue(0, 0, 1.0);
+	st.setOrigin(translation);
+	
+	tf::Quaternion rotation;
+	rotation.setRPY(0, 0, 0);
+	st.setRotation(rotation);
 	
 	tb.sendTransform(tf::StampedTransform(st, ros::Time::now(), "frame1", "frame2"));
 	ROS_INFO("Transform Published");
