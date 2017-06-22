@@ -12,7 +12,7 @@ if __name__ == '__main__':
     
     while not rospy.is_shutdown():
         try:
-            (translation, rotation) = listener.lookupTransform('frame2', 'frame1', rospy.Time(0))
+            (translation, rotation) = listener.lookupTransform('frame1', 'frame2', rospy.Time(0))
         except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
             rospy.logerr('LookupTransform Error !')
             rospy.sleep(1.0)
