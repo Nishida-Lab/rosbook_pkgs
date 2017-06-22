@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find fourth_robot_description)/urdf/common.xacro"/>
+  
+  <xacro:macro name="gim30_v0" params="parent *joint_origin">
+	<joint name="gim30_joint" type="fixed">
+      <insert_block name="joint_origin" />
+      <parent link="${parent}"/>
+      <child link="gim30_link"/>
+	</joint>
+	
+    <link name="gim30_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://fourth_robot_description/meshes/DAE/sensors/gim30/gim30.dae"/>
+        </geometry>
+      </visual>
+	  <collision>
+		<geometry>
+		  <mesh filename="package://fourth_robot_description/meshes/STL/sensors/gim30/gim30.stl"/>
+		</geometry>
+	  </collision>
+	  <inertial>
+		<origin xyz="-0.04 0 -0.1"/>
+		<box_inertial mass="0.85" height="0.1" width="0.05" depth="0.25"/>
+	  </inertial>
+    </link>
+  </xacro:macro>
+  
+</robot>

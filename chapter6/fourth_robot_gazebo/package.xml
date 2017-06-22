@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>fourth_robot_gazebo</name>
+  <version>1.0.0</version>
+  <description>The fourth_robot_gazebo package</description>
+
+  <maintainer email="nishidatakeshilab@gmail.com">Nishida Lab</maintainer>
+  <author email="k104073r@mail.kyutech.jp">RyodoTanaka</author>
+
+  <license>TODO</license>
+  
+  <url type="repository">https://github.com/Nishida-Lab/rosbook_pkgs.git</url>
+  <url type="bugtracker">https://github.com/Nishida-Lab/rosbook_pkgs/issues</url>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>ros_control</run_depend>
+  <run_depend>gazebo_ros_control</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>fourth_robot_control</run_depend>
+</package>

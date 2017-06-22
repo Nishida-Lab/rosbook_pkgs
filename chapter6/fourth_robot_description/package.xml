@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>fourth_robot_description</name>
+  <version>2.0.0</version>
+  <description>The fourth_robot_description package</description>
+
+  <maintainer email="nishidatakeshilab@gmail.com">Nishida Lab</maintainer>
+  <author email="k104073r@mail.kyutech.jp">RyodoTanaka</author>
+
+  <license>TODO</license>
+  
+  <url type="repository">https://github.com/Nishida-Lab/rosbook_pkgs.git</url>
+  <url type="bugtracker">https://github.com/Nishida-Lab/rosbook_pkgs/issues</url>
+  
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>rviz</run_depend>
+  <run_depend>xacro</run_depend>
+  
+</package>

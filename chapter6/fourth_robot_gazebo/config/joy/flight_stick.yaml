@@ -1,0 +1,5 @@
+axis_linear_x: 1        # Left Analog X 
+axis_linear_y: 0        # Left Analog Y
+axis_angular_z: 3       # Right Analog Y
+enable_button: 12       # Mode A
+enable_turbo_button: 0  # Red Button
