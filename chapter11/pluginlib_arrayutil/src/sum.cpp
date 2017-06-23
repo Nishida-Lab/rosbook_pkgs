@@ -24,4 +24,4 @@ namespace arrayutil_plugins_sum
   }
 }
 
-PLUGINLIB_EXPORT_CLASS(arrayutil_plugins_sum::Sum, arrayutil_base::ArrayUtil);
+PLUGINLIB_EXPORT_CLASS(arrayutil_plugins_sum::Sum, arrayutil_base::ArrayUtil)

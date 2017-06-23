@@ -28,4 +28,4 @@ namespace arrayutil_plugins_min
   }
 }
 
-PLUGINLIB_EXPORT_CLASS(arrayutil_plugins_min::Min, arrayutil_base::ArrayUtil);
+PLUGINLIB_EXPORT_CLASS(arrayutil_plugins_min::Min, arrayutil_base::ArrayUtil)

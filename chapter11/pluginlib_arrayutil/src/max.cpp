@@ -28,4 +28,4 @@ namespace arrayutil_plugins_max
   }
 }
 
-PLUGINLIB_EXPORT_CLASS(arrayutil_plugins_max::Max, arrayutil_base::ArrayUtil);
+PLUGINLIB_EXPORT_CLASS(arrayutil_plugins_max::Max, arrayutil_base::ArrayUtil)

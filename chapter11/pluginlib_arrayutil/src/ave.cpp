@@ -25,4 +25,4 @@ namespace arrayutil_plugins_ave
   }
 }
 
-PLUGINLIB_EXPORT_CLASS(arrayutil_plugins_ave::Ave, arrayutil_base::ArrayUtil);
+PLUGINLIB_EXPORT_CLASS(arrayutil_plugins_ave::Ave, arrayutil_base::ArrayUtil)
