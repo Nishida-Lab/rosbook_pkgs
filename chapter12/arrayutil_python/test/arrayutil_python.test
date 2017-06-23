@@ -1,0 +1,8 @@
+<launch>
+  <!-- Plugin test -->
+  <test test-name="arrayutil_python_test"
+        pkg="arrayutil_python"
+        type="run_tests.py"
+        time-limit="5.0">
+  </test>
+</launch>
