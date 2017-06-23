@@ -1,0 +1,8 @@
+<launch>
+  <!-- Plugin test -->
+  <test test-name="pluginlib_arrayutil_test"
+        pkg="pluginlib_arrayutil"
+        type="pluginlib_arrayutil_test"
+        time-limit="5.0">
+  </test>
+</launch>
