@@ -1,0 +1,8 @@
+<launch>
+  <node name="cloud_reader" pkg="cloud_exercise" type="cloud_reader" />
+  <node name="cloud_filter" pkg="cloud_exercise" type="cloud_filter" />
+  <node name="cloud_downsampler" pkg="cloud_exercise" type="cloud_downsampler" />
+  <node name="cloud_planar_segmenter" pkg="cloud_exercise" type="cloud_planar_segmenter" />
+  <node name="cloud_clusterer" pkg="cloud_exercise" type="cloud_clusterer" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cloud_exercise)/rviz/exercise.rviz" required="true" />
+</launch>

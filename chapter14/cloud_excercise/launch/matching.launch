@@ -1,0 +1,4 @@
+<launch>
+  <node name="cloud_matching" pkg="cloud_exercise" type="cloud_matching" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cloud_exercise)/rviz/matching.rviz" required="true" />
+</launch>
