@@ -149,7 +149,7 @@ Visualization Manager:
       Color: 170; 85; 255
       Color Transformer: FlatColor
       Decay Time: 3
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 127
       Max Intensity: 4096
@@ -166,7 +166,7 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -254,5 +254,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1644
-  X: 1984
-  Y: 24
+  X: 1975
+  Y: 14
