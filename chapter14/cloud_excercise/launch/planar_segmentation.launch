@@ -3,6 +3,5 @@
   <node name="cloud_filter" pkg="cloud_exercise" type="cloud_filter" />
   <node name="cloud_downsampler" pkg="cloud_exercise" type="cloud_downsampler" />
   <node name="cloud_planar_segmenter" pkg="cloud_exercise" type="cloud_planar_segmenter" />
-  <node name="cloud_clusterer" pkg="cloud_exercise" type="cloud_clusterer" />
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cloud_exercise)/rviz/clustering.rviz" required="true" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cloud_exercise)/rviz/planar_segmentation.rviz" required="true" />
 </launch>

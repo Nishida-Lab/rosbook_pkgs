@@ -1,0 +1,5 @@
+<launch>
+  <node name="cloud_reader" pkg="cloud_exercise" type="cloud_reader" />
+  <node name="cloud_filter" pkg="cloud_exercise" type="cloud_filter" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cloud_exercise)/rviz/filtering.rviz" required="true" />
+</launch>

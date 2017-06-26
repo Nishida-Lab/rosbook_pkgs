@@ -1,0 +1,6 @@
+<launch>
+  <node name="cloud_reader" pkg="cloud_exercise" type="cloud_reader" />
+  <node name="cloud_filter" pkg="cloud_exercise" type="cloud_filter" />
+  <node name="cloud_downsampler" pkg="cloud_exercise" type="cloud_downsampler" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cloud_exercise)/rviz/downsampling.rviz" required="true" />
+</launch>

@@ -5,7 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-      Splitter Ratio: 0.55794
+      Splitter Ratio: 0.523605
     Tree Height: 747
   - Class: rviz/Selection
     Name: Selection
@@ -25,7 +25,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: PointCloud2_not_rotated
+    SyncSource: PointCloud2_rotated
 Visualization Manager:
   Class: ""
   Displays:
@@ -50,21 +50,21 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
+        Max Value: 0.499997
+        Min Value: 0.000202795
         Value: true
       Axis: Z
-      Channel Name: x
+      Channel Name: intensity
       Class: rviz/PointCloud2
-      Color: 0; 255; 0
+      Color: 85; 255; 0
       Color Transformer: FlatColor
-      Decay Time: 5
+      Decay Time: 3
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 2.9934
+      Max Intensity: 4096
       Min Color: 0; 0; 0
-      Min Intensity: 0.00848338
+      Min Intensity: 0
       Name: PointCloud2_not_rotated
       Position Transformer: XYZ
       Queue Size: 10
@@ -80,15 +80,15 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
+        Max Value: 0.498587
+        Min Value: 0.000308157
         Value: true
       Axis: Z
       Channel Name: intensity
       Class: rviz/PointCloud2
       Color: 255; 0; 0
       Color Transformer: FlatColor
-      Decay Time: 5
+      Decay Time: 3
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
@@ -103,36 +103,6 @@ Visualization Manager:
       Size (m): 0.02
       Style: Flat Squares
       Topic: /cloud_rotated
-      Unreliable: false
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: true
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz/PointCloud2
-      Color: 170; 255; 255
-      Color Transformer: FlatColor
-      Decay Time: 5
-      Enabled: true
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Max Intensity: 4096
-      Min Color: 0; 0; 0
-      Min Intensity: 0
-      Name: PointCloud2_aligned
-      Position Transformer: XYZ
-      Queue Size: 10
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.02
-      Style: Flat Squares
-      Topic: /cloud_aligned
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -194,5 +164,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1644
-  X: 1987
-  Y: 27
+  X: 1978
+  Y: 20
