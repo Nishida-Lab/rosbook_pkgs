@@ -4,7 +4,7 @@
 
 #include <pcl/filters/statistical_outlier_removal.h>
 
-#include <cloud_exercise/operation_handler.h>
+#include <cloud_exercise/cloud_common.h>
 
 class CloudFilter : public CloudOperator
 {
@@ -38,6 +38,7 @@ protected:
     ros::Publisher cloud_pub_;
     sensor_msgs::PointCloud2 cloud_filterd_ros_;
 };
+
 
 main(int argc, char **argv)
 {

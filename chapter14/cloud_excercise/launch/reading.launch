@@ -1,4 +1,0 @@
-<launch>
-  <node name="cloud_reader" pkg="cloud_exercise" type="cloud_reader" />
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cloud_exercise)/rviz/reading.rviz" required="true" />
-</launch>

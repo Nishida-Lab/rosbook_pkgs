@@ -5,7 +5,7 @@
 #include <pcl/segmentation/sac_segmentation.h>
 #include <pcl/filters/extract_indices.h>
 
-#include <cloud_exercise/operation_handler.h>
+#include <cloud_exercise/cloud_common.h>
 
 class CloudPlanarSegmenter : public CloudOperator
 {
@@ -19,7 +19,7 @@ public:
     void operate()
     {
         pcl::PointIndices::Ptr inliers(new pcl::PointIndices());
-        segmentPlanar(inliers);
+        segment(inliers);
         extract(inliers);
     }
 
@@ -31,7 +31,7 @@ public:
     }
 
 private:
-    void segmentPlanar(pcl::PointIndices::Ptr inliers)
+    void segment(pcl::PointIndices::Ptr inliers)
     {
         pcl::fromROSMsg(cloud_input_ros_, cloud_input_pcl_);
 
@@ -79,6 +79,7 @@ protected:
     pcl_msgs::ModelCoefficients coefficients_ros_;
     pcl::PointCloud<pcl::PointXYZ> cloud_input_pcl_;
 };
+
 
 main(int argc, char **argv)
 {

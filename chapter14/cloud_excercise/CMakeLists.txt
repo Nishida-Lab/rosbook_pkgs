@@ -7,6 +7,8 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   sensor_msgs
   std_msgs
+  geometry_msgs
+  eigen_conversions
 )
 
 find_package(PCL REQUIRED)
@@ -14,7 +16,7 @@ find_package(PCL REQUIRED)
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS pcl_ros roscpp rospy sensor_msgs std_msgs
+  CATKIN_DEPENDS pcl_ros roscpp rospy sensor_msgs std_msgs geometry_msgs eigen_conversions
 )
 
 include_directories(
@@ -31,8 +33,8 @@ target_link_libraries(cloud_creator ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 add_executable(cloud_matcher src/cloud_matcher.cpp)
 target_link_libraries(cloud_matcher ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 
-add_executable(cloud_reader src/cloud_reader.cpp)
-target_link_libraries(cloud_reader ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+add_executable(cloud_loader src/cloud_loader.cpp)
+target_link_libraries(cloud_loader ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 
 add_executable(cloud_downsampler src/cloud_downsampler.cpp)
 target_link_libraries(cloud_downsampler ${catkin_LIBRARIES} ${PCL_LIBRARIES})

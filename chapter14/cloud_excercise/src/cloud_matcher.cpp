@@ -1,102 +1,84 @@
 #include <ros/ros.h>
-#include <ros/package.h>
 #include <sensor_msgs/PointCloud2.h>
+#include <geometry_msgs/Transform.h>
+#include <eigen_conversions/eigen_msg.h>
 #include <pcl_conversions/pcl_conversions.h>
 
 #include <pcl/registration/icp.h>
 
-enum INDEX_CONVERTER
+#include <cloud_exercise/cloud_common.h>
+
+enum INDICES_CONVERTER
 {
   INDEX_NOT_ROTATED = 0, INDEX_ROTATED = 1, INDEX_ALIGNED = 2
-};
-
-class CloudReader
-{
-public:
-    CloudReader(){}
-
-    CloudReader(ros::NodeHandle &nh, const std::string &pub_topic_name, const std::string &pcd_file_name = "") :
-        nh_(nh),
-        cloud_pub_(nh_.advertise<sensor_msgs::PointCloud2>(pub_topic_name, 1))
-    {
-        if(pcd_file_name == "")
-            return;
-
-        file_path_ = ros::package::getPath("cloud_exercise") + "/data/" + pcd_file_name;
-    }
-
-    void read()
-    {
-        if(file_path_ == "")
-            return;
-
-        pcl::io::loadPCDFile(file_path_, cloud_pcl_);
-    }
-
-    void convertPCLtoROS()
-    {
-        pcl::toROSMsg(cloud_pcl_, cloud_ros_);
-        cloud_ros_.header.frame_id = "base_link";
-    }
-
-    void publish()
-    {
-        cloud_pub_.publish(cloud_ros_);
-    }
-
-    pcl::PointCloud<pcl::PointXYZ> cloud_pcl_;
-
-private:
-    ros::NodeHandle nh_;
-    ros::Publisher cloud_pub_;
-    sensor_msgs::PointCloud2 cloud_ros_;
-    std::string file_path_;
 };
 
 class CloudMatchingHandler
 {
 public:
-    CloudMatchingHandler(ros::NodeHandle &nh)
+    CloudMatchingHandler(ros::NodeHandle &nh) :
+        transform_pub_(nh.advertise<geometry_msgs::Transform>("icp_transformation", 1))
     {
-        readers_.push_back(new CloudReader(nh, "cloud_not_rotated", "not_rotated.pcd"));
-        readers_.push_back(new CloudReader(nh, "cloud_rotated", "rotated.pcd"));
-        readers_.push_back(new CloudReader(nh, "cloud_aligned"));
+        loaders_.push_back(new CloudLoader(nh, "cloud_not_rotated", "not_rotated.pcd"));
+        loaders_.push_back(new CloudLoader(nh, "cloud_rotated", "rotated.pcd"));
+        loaders_.push_back(new CloudLoader(nh, "cloud_aligned"));
     }
 
     void operate()
     {
-        for(std::vector<CloudReader*>::iterator it = readers_.begin(); it != readers_.end(); ++it)
-            (*it)->read();
+        for(std::vector<CloudLoader*>::iterator it = loaders_.begin(); it != loaders_.end(); ++it)
+            (*it)->load();
 
         match();
+        convertTransformEiganToROS();
 
-        for(std::vector<CloudReader*>::iterator it = readers_.begin(); it != readers_.end(); ++it)
+        for(std::vector<CloudLoader*>::iterator it = loaders_.begin(); it != loaders_.end(); ++it)
             (*it)->convertPCLtoROS();
     }
 
     void publish()
     {
-        for(std::vector<CloudReader*>::iterator it = readers_.begin(); it != readers_.end(); ++it)
+        // Publish pointcloud
+        for(std::vector<CloudLoader*>::iterator it = loaders_.begin(); it != loaders_.end(); ++it)
             (*it)->publish();
+
+        // Publish transformation in Translation and Quaternion
+        transform_pub_.publish(transform_ros_);
     }
 
 private:
     void match()
     {
         pcl::IterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> icp;
-        icp.setInputSource(readers_[INDEX_NOT_ROTATED]->cloud_pcl_.makeShared());
-        icp.setInputTarget(readers_[INDEX_ROTATED]->cloud_pcl_.makeShared());
+
+        icp.setInputSource(loaders_[INDEX_NOT_ROTATED]->cloud_pcl_.makeShared());
+        icp.setInputTarget(loaders_[INDEX_ROTATED]->cloud_pcl_.makeShared());
 
         icp.setMaxCorrespondenceDistance(5);
         icp.setMaximumIterations(100);
         icp.setTransformationEpsilon (1e-12);
         icp.setEuclideanFitnessEpsilon(0.1);
 
-        icp.align(readers_[INDEX_ALIGNED]->cloud_pcl_);
+        icp.align(loaders_[INDEX_ALIGNED]->cloud_pcl_);
+        transform_eigen_ = icp.getFinalTransformation().cast<double>();
     }
 
-    std::vector<CloudReader*> readers_;
+    void convertTransformEiganToROS()
+    {
+        // convert Matrix4d to Affine3d for ROS conversion
+        Eigen::Affine3d transform_affine_eigen;
+        transform_affine_eigen = transform_eigen_;
+
+        tf::transformEigenToMsg(transform_affine_eigen, transform_ros_);
+        ROS_INFO_STREAM(std::endl << transform_ros_);
+    }
+
+    std::vector<CloudLoader*> loaders_;
+    ros::Publisher transform_pub_;
+    Eigen::Matrix4d transform_eigen_;
+    geometry_msgs::Transform transform_ros_;
 };
+
 
 main(int argc, char **argv)
 {

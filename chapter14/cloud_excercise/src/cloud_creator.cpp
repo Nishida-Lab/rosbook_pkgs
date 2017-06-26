@@ -19,11 +19,6 @@ public:
         file_path_ = ros::package::getPath("cloud_exercise") + "/data/" + file_name;
     }
 
-    void publish()
-    {
-        cloud_pub_.publish(cloud_ros_);
-    }
-
     void operate()
     {
         cloud_pcl_.width  = 5000;
@@ -38,6 +33,11 @@ public:
         pcl::io::savePCDFile(file_path_, cloud_pcl_);
     }
 
+    void publish()
+    {
+        cloud_pub_.publish(cloud_ros_);
+    }
+
     virtual void create() = 0;
 
 protected:
@@ -47,6 +47,7 @@ protected:
     sensor_msgs::PointCloud2 cloud_ros_;
     std::string file_path_;
 };
+
 
 class NotRotatedCloudCreator : public CloudCreator
 {
@@ -112,6 +113,7 @@ public:
 private:
     std::vector<CloudCreator*> creators_;
 };
+
 
 main(int argc, char **argv)
 {

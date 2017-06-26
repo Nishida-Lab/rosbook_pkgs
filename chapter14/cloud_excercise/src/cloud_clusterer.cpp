@@ -6,7 +6,7 @@
 #include <pcl/segmentation/extract_clusters.h>
 #include <pcl/filters/extract_indices.h>
 
-#include <cloud_exercise/operation_handler.h>
+#include <cloud_exercise/cloud_common.h>
 
 class CloudClusterer : public CloudOperator
 {
@@ -92,6 +92,7 @@ protected:
     ros::Publisher cloud_pub_;
     sensor_msgs::PointCloud2 cloud_filterd_ros_;
 };
+
 
 main(int argc, char **argv)
 {
