@@ -13,6 +13,7 @@ public:
     CloudPlanarSegmenter(ros::NodeHandle &nh) :
         cloud_segmented_pub_(nh.advertise<sensor_msgs::PointCloud2>("cloud_segmented", 1)),
         cloud_without_segmented_pub_(nh.advertise<sensor_msgs::PointCloud2>("cloud_without_segmented", 1)),
+        indices_pub_(nh.advertise<pcl_msgs::PointIndices>("indices", 1)),
         coefficients_pub_(nh.advertise<pcl_msgs::ModelCoefficients>("coefficients", 1))
     {}
 
@@ -27,6 +28,7 @@ public:
     {
         cloud_segmented_pub_.publish(cloud_segmented_ros_);
         cloud_without_segmented_pub_.publish(cloud_without_segmented_ros_);
+        indices_pub_.publish(indices_ros_);
         coefficients_pub_.publish(coefficients_ros_);
     }
 
@@ -46,6 +48,7 @@ private:
         segmentation.setInputCloud(cloud_input_pcl_.makeShared());
         segmentation.segment(*inliers, coefficients_pcl);
 
+        pcl_conversions::fromPCL(*inliers, indices_ros_);
         pcl_conversions::fromPCL(coefficients_pcl, coefficients_ros_);
     }
 
@@ -73,9 +76,11 @@ private:
 protected:
     ros::Publisher cloud_segmented_pub_;
     ros::Publisher cloud_without_segmented_pub_;
+    ros::Publisher indices_pub_;
     ros::Publisher coefficients_pub_;
     sensor_msgs::PointCloud2 cloud_segmented_ros_;
     sensor_msgs::PointCloud2 cloud_without_segmented_ros_;
+    pcl_msgs::PointIndices indices_ros_;
     pcl_msgs::ModelCoefficients coefficients_ros_;
     pcl::PointCloud<pcl::PointXYZ> cloud_input_pcl_;
 };
