@@ -2,29 +2,19 @@ cmake_minimum_required(VERSION 2.8.3)
 project(cloud_exercise)
 
 find_package(catkin REQUIRED COMPONENTS
-  pcl_ros
-  roscpp
-  rospy
-  sensor_msgs
-  std_msgs
-  geometry_msgs
-  eigen_conversions
+  pcl_conversions pcl_ros roscpp rospy sensor_msgs std_msgs geometry_msgs eigen_conversions
 )
 
 find_package(PCL REQUIRED)
 
+include_directories(include ${catkin_INCLUDE_DIRS} ${PCL_INCLUDE_DIRS})
+
+link_directories(${PCL_LIBRARY_DIRS})
+
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS pcl_ros roscpp rospy sensor_msgs std_msgs geometry_msgs eigen_conversions
-)
-
-include_directories(
-  include ${catkin_INCLUDE_DIRS} ${PCL_INCLUDE_DIRS}
-)
-
-link_directories(
-  ${PCL_LIBRARY_DIRS}
+  CATKIN_DEPENDS pcl_conversions pcl_ros roscpp rospy sensor_msgs std_msgs geometry_msgs eigen_conversions
 )
 
 add_executable(cloud_creator src/cloud_creator.cpp)
