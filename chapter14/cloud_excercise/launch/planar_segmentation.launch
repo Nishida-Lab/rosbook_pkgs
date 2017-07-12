@@ -1,0 +1,7 @@
+<launch>
+  <node name="cloud_loader" pkg="cloud_exercise" type="cloud_loader" />
+  <node name="cloud_filter" pkg="cloud_exercise" type="cloud_filter" />
+  <node name="cloud_downsampler" pkg="cloud_exercise" type="cloud_downsampler" />
+  <node name="cloud_planar_segmenter" pkg="cloud_exercise" type="cloud_planar_segmenter" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cloud_exercise)/rviz/planar_segmentation.rviz" required="true" />
+</launch>

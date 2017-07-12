@@ -1,0 +1,4 @@
+<launch>
+  <node name="cloud_loader" pkg="cloud_exercise" type="cloud_loader" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cloud_exercise)/rviz/loading.rviz" required="true" />
+</launch>

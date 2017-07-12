@@ -1,0 +1,4 @@
+<launch>
+  <node name="cloud_creator" pkg="cloud_exercise" type="cloud_creator" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cloud_exercise)/rviz/creation.rviz" required="true" />
+</launch>
