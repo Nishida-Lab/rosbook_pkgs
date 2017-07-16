@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>smach_sample</name>
+  <version>0.0.0</version>
+  <description>The smach_sample package</description>
+
+  <maintainer email="p595201m@mail.kyutech.jp">Masaru Morita</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend>
+  <exec_depend>smach</exec_depend>
+  <exec_depend>smach_ros</exec_depend>
+  <exec_depend>smach_msgs</exec_depend>
+
+</package>
