@@ -1,0 +1,5 @@
+<launch>
+  <node name="tf2_broadcaster" pkg="tf_tutorial" type="tf2_broadcaster.py" />
+  <node name="rqt_tf_tree" pkg="rqt_tf_tree" type="rqt_tf_tree" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tf_tutorial)/rviz/tf_sample.rviz" required="true" />
+</launch>
