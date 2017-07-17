@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>joy_control</name>
+  <version>0.0.0</version>
+  <description>The joy_control package</description>
+
+  <maintainer email="p595201m@mail.kyutech.jp">Masaru Morita</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>joy</exec_depend>
+  <exec_depend>joy_twist</exec_depend>
+</package>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>chapter9</name>
+  <version>0.1.0</version>
+  <description>The chapter9 package</description>
+
+  <maintainer email="p595201m@mail.kyutech.jp">Masaru Morita</maintainer>
+  <author email="p595201m@mail.kyutech.jp">Masaru Morita</author>
+
+  <license>TODO</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>fourth_robot_2dnav</exec_depend>
+
+  <export>
+	<metapackage />
+  </export>
+</package>

@@ -1,0 +1,44 @@
+# Using map
+use_map_topic: true
+first_map_only: true
+# Publish scans from best pose at a max of 10 Hz
+odom_model_type: diff-corrected
+odom_alpha5: 0.1
+transform_tolerance: 0.2
+gui_publish_rate: 10.0
+laser_max_beams: 60
+min_particles: 100
+max_particles: 5000
+kld_err: 0.01
+kld_z: 0.99
+odom_alpha1: 0.2
+odom_alpha2: 0.2
+# translation std dev, m
+odom_alpha3: 0.8
+odom_alpha4: 0.2
+laser_z_hit: 0.5
+laser_z_short: 0.05
+laser_z_max" : 0.05
+laser_z_rand": 0.5
+laser_sigma_hit: 0.2
+laser_lambda_short: 0.1
+laser_lambda_short: 0.1
+laser_model_type: likelihood_field
+laser_model_type: beam
+laser_likelihood_max_dist: 2.0
+update_min_d: 0.2
+update_min_a: 0.5
+odom_frame_id: odom
+resample_interval: 1
+transform_tolerance: 0.1
+recovery_alpha_slow: 0.0
+recovery_alpha_fast: 0.0
+# initial_pose_x: 75.630
+# initial_pose_y: 62.509
+# initial_pose_a: -1.220
+# initial_pose_x: -2.964
+# initial_pose_y: 57.112
+# initial_pose_a: 1.507
+# initial_pose_x: 419.633
+# initial_pose_y: 186.369
+# initial_pose_a: 2.569
