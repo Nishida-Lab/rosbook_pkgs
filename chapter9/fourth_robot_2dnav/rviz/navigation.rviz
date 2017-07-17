@@ -8,7 +8,7 @@ Panels:
         - /Status1
         - /Path3
       Splitter Ratio: 0.5
-    Tree Height: 643
+    Tree Height: 359
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -419,5 +419,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 936
-  X: 330
-  Y: 74
+  X: 320
+  Y: 64

@@ -22,7 +22,7 @@
     <!-- BASE GLOBAL PLANNER -->
     <rosparam file="$(find fourth_robot_2dnav)/config/planner/global/navfn_planner.yaml" command="load" />
     <!-- BASE LOCAL PLANNER -->
-    <rosparam file="$(find fourth_robot_2dnav)/config/planner/local/dwa_planner.yaml" command="load" />
+    <rosparam file="$(find fourth_robot_2dnav)/config/planner/local/trajectory_planner.yaml" command="load" />
     <!-- RECOVERY -->
     <rosparam file="$(find fourth_robot_2dnav)/config/planner/recovery_behaviors.yaml" command="load"/>
 
@@ -37,5 +37,5 @@
     <remap from="cmd_vel" to="/diff_drive_controller/cmd_vel"/>
   </node>
 
-  <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find fourth_robot_2dnav)/rviz/move_base.rviz" />
+  <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find fourth_robot_2dnav)/rviz/navigation.rviz" />
 </launch>
