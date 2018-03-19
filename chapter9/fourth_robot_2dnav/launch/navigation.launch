@@ -1,7 +1,8 @@
 <launch>
   <master auto="start"/>
   <!-- MAP SERVER -->
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find fourth_robot_2dnav)/map/my_map.yaml">
+  <arg name="map_file" default="$(find fourth_robot_2dnav)/map/my_map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)">
     <param name="frame_id" value="/map" />
   </node>
 
