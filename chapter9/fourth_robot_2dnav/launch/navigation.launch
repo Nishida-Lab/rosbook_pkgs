@@ -10,8 +10,6 @@
   <include file="$(find fourth_robot_2dnav)/launch/amcl_diff.launch"/>
 
   <!-- MOVE BASE -->
-  <!-- remap the odom topic for local planner -->
-  <node pkg="topic_tools" type="relay" name="relay_odom" args="/diff_drive_controller/odom odom"/>
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <!-- COST MAP -->
     <rosparam file="$(find fourth_robot_2dnav)/config/costmap/costmap_common.yaml" command="load" ns="global_costmap" />
@@ -35,6 +33,7 @@
 
     <!-- remap cmd_vel topic for gazebo -->
     <remap from="cmd_vel" to="/diff_drive_controller/cmd_vel"/>
+	<remap from="odom" to="/diff_drive_controller/odom"/>
   </node>
 
   <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find fourth_robot_2dnav)/rviz/navigation.rviz" />
