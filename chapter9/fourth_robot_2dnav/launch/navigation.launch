@@ -1,7 +1,6 @@
 <launch>
   <master auto="start"/>
   <!-- MAP SERVER -->
-  <!-- gazebo sim  -->
   <node name="map_server" pkg="map_server" type="map_server" args="$(find fourth_robot_2dnav)/map/my_map.yaml">
     <param name="frame_id" value="/map" />
   </node>
