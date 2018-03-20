@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    <remap from="scan" to="front/scan" />
+    <rosparam file="$(find fourth_robot_2dnav)/config/amcl/amcl_diff.yaml" command="load" />
+  </node>
+</launch>

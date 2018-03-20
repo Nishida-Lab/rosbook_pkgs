@@ -1,0 +1,12 @@
+<launch>
+  <arg name="bag_filename" default="$(find fourth_robot_2dnav)/bag/my_data.bag"/>
+
+  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping">
+    <remap from="scan" to="/front/scan"/>
+  </node>
+
+  <node name="playbag" pkg="rosbag" type="play"
+		args="--clock $(arg bag_filename)" />
+  
+  <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find fourth_robot_2dnav)/rviz/move_base.rviz" />
+</launch>

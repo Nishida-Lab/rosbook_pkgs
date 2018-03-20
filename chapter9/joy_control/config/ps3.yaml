@@ -1,0 +1,5 @@
+axis_linear_x: 1        # Left Analog X 
+axis_linear_y: 0        # Left Analog Y
+axis_angular_z: 2       # Right Analog Y
+enable_button: 8        # L2 button
+enable_turbo_button: 10 # L1 button

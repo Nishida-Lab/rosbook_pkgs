@@ -1,0 +1,10 @@
+base_global_planner: carrot_planner/CarrotPlanner
+  # The size steps to take backward in meters along the vector between the robot and the user-specified goal point when attempting to find a valid goal for the local planner.
+  #step_size:
+  # The minimum distance from the robot in meters at which a goal point will be sent to the local planner.
+  #min_dist_from_robot:  
+
+ 
+CarrotPlanner:
+  transform_tolerance: 0.2
+  step_size: 0.1

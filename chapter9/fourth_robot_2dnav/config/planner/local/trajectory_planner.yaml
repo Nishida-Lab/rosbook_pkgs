@@ -1,0 +1,25 @@
+base_local_planner: base_local_planner/TrajectoryPlannerROS
+TrajectoryPlannerROS:
+  max_vel_x: 0.825
+  min_vel_x: -0.5
+  max_rotational_vel: 0.2
+  min_in_place_rotational_vel: 1.04
+
+  acc_lim_th: 4.0
+  acc_lim_x: 2.0
+  acc_lim_y: 0.0
+
+  holonomic_robot: false
+#  dwa: true
+#  oscillation_reset_dist: 0.5
+#  escape_vel: -0.5
+#  
+#  sim_time: 3.0
+#  sim_granularity: 0.1
+#  vx_samples: 10
+#
+#  occdist_scale: 0.01
+#
+#  planner_frequency: 1.0
+#
+#  publish_cost_grid_pc: false
