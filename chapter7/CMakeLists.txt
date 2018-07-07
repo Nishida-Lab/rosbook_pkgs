@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(test_opencv)
+project(chapter7)
 
 find_package(catkin REQUIRED COMPONENTS
   cv_bridge image_transport roscpp rospy sensor_msgs std_msgs
