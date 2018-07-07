@@ -1,8 +1,0 @@
-Symlinking /home/nishidalab/ros/rosbook-pkg_ws/src/rosbook_pkgs/chapter7/devel/./setup.sh
-Symlinking /home/nishidalab/ros/rosbook-pkg_ws/src/rosbook_pkgs/chapter7/devel/./setup.zsh
-Symlinking /home/nishidalab/ros/rosbook-pkg_ws/src/rosbook_pkgs/chapter7/devel/./env.sh
-Symlinking /home/nishidalab/ros/rosbook-pkg_ws/src/rosbook_pkgs/chapter7/devel/./_setup_util.py
-Symlinking /home/nishidalab/ros/rosbook-pkg_ws/src/rosbook_pkgs/chapter7/devel/./setup.bash
-Symlinking /home/nishidalab/ros/rosbook-pkg_ws/src/rosbook_pkgs/chapter7/devel/lib/pkgconfig/catkin_tools_prebuild.pc
-Symlinking /home/nishidalab/ros/rosbook-pkg_ws/src/rosbook_pkgs/chapter7/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
-Symlinking /home/nishidalab/ros/rosbook-pkg_ws/src/rosbook_pkgs/chapter7/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake

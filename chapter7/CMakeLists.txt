@@ -19,3 +19,6 @@ include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
 add_executable(test_opencv src/test_opencv.cpp)
 target_link_libraries(test_opencv ${OpenCV_LIBRARIES})
 
+add_executable(test_get_input src/test_get_input.cpp)
+target_link_libraries(test_get_input ${OpenCV_LIBRARIES})
+

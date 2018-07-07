@@ -1,95 +1,37 @@
 #include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
+#include <opencv2/highgui/highgui.hpp>
+
+cv::Mat g_display_image;
 
 void on_mouse(int event, int x, int y, int flags, void* param) {
     switch (event) {
     case CV_EVENT_MOUSEMOVE:
-        DisplayImage.at<cv::Vec3b>(y, x).val[1] = 255;
-).
-val[2] = 255;
-
-DisplayImage.at<cv:
-:Vec3b>(y , x
-
-break;
-case CV_EVENT_LBUTTONDOWN:
-v
-::
-Point(x , y
-) , 5 , c
-v
-::
-Scalar(255 , 255 , 255) , 2
-);
-
-
-cv:
-:circle(DisplayImage , c
-
-break;
-case CV_EVENT_RBUTTONDOWN:
-) , cv: :
-Point(x+20 , y
-) ,
-
-cv: :li 且 e(DisplayImage , cv: :Point(x-20 , y
-c
-v
-: :
-Scalar(255 , 255 , 0));
-)
-;
-
-cv::Scalar(255 , 255 , 0
-
-break;
-case CV EVENT RBUTTONUP:
-
-c
-v
-::
-line(DisplayImage , cv:
-:Point(x , y-20) , cv::Point(x , y+20) ,
-cv:
-:Scalar(255 , 0 , 255));
-
-c
-v
-::
-Scalar(255 , 0 , 255);
-
-break;
-default:
-
-break;
-}
-display" , DisplayImage);
-c
-v
-: :
-imshow(' ・
+        g_display_image.at<cv::Vec3b>(y, x).val[1] = 255;
+        g_display_image.at<cv::Vec3b>(y, x).val[2] = 255;
+        break;
+    case CV_EVENT_LBUTTONDOWN:
+        cv::circle(g_display_image, cv::Point(x, y), 5, cv::Scalar(255, 255, 255), 2);
+        break;
+    case CV_EVENT_RBUTTONDOWN:
+        cv::line(g_display_image, cv::Point(x-20, y), cv::Point(x+20, y), cv::Scalar(255, 255, 0));
+        break;
+    case CV_EVENT_RBUTTONUP:
+        cv::line(g_display_image, cv::Point(x, y-20), cv::Point(x, y+20), cv::Scalar(255, 0, 255));
+        break;
+    default:
+        break;
+    }
+    cv::imshow("display", g_display_image);
 }
 
-む * 釘 g
-v
-[
-]
-){
-int main(int argc , ch
-DisplayImage - cv::Mat::
-zeros(300 , 300 , CV_8UC3);
-cv: ・ imshow("display' DisplayImage);
-)
-;
-cvSetMouseCallback("display" , on_mouse , 0
-while(l)
+int main(int argc, char* argv[]) {
+    g_display_image = cv::Mat::zeros(300, 300, CV_8UC3);
+    cv::imshow("display", g_display_image);
+    cvSetMouseCallback("display", on_mouse, 0);
 
-if (cv:
-:waitKey(O) =
-= 'q')
+    while(1)
+        if(cv::waitKey(0) == 'q')
+            break;
 
-break;
-
-return;
-
+    return 0;
 }
