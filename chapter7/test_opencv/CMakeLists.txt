@@ -28,3 +28,6 @@ target_link_libraries(test_edge_detection ${OpenCV_LIBRARIES})
 add_executable(test_feature_detection src/test_feature_detection.cpp)
 target_link_libraries(test_feature_detection ${OpenCV_LIBRARIES})
 
+add_executable(test_feature_detection_matching src/test_feature_detection_matching.cpp)
+target_link_libraries(test_feature_detection_matching ${OpenCV_LIBRARIES})
+
