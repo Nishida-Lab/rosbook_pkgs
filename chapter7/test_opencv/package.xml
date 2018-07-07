@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>chapter7</name>
+  <name>test_opencv</name>
   <version>0.0.0</version>
   <description>The test_opencv package</description>
 

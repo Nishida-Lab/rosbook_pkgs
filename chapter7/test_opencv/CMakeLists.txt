@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(chapter7)
+project(test_opencv)
 
 find_package(catkin REQUIRED COMPONENTS
   cv_bridge image_transport roscpp rospy sensor_msgs std_msgs
@@ -22,3 +22,5 @@ target_link_libraries(test_opencv ${OpenCV_LIBRARIES})
 add_executable(test_get_input src/test_get_input.cpp)
 target_link_libraries(test_get_input ${OpenCV_LIBRARIES})
 
+add_executable(test_edge_detection src/test_edge_detection.cpp)
+target_link_libraries(test_edge_detection ${OpenCV_LIBRARIES})
