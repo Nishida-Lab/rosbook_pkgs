@@ -31,3 +31,6 @@ target_link_libraries(test_feature_detection ${OpenCV_LIBRARIES})
 add_executable(test_feature_detection_matching src/test_feature_detection_matching.cpp)
 target_link_libraries(test_feature_detection_matching ${OpenCV_LIBRARIES})
 
+add_executable(test_svm src/test_svm.cpp)
+target_link_libraries(test_svm ${OpenCV_LIBRARIES})
+
