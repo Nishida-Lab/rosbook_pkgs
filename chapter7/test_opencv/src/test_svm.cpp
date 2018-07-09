@@ -3,7 +3,8 @@
 #include <opencv2/ml.hpp>
 #include <iostream>
 
-cv::Mat makeData(float offset) {
+cv::Mat makeData(float offset)
+{
     cv::Mat data = cv::Mat::zeros(100, 2, CV_32F);
     cv::randn(data, offset, 0.5);
     return data;

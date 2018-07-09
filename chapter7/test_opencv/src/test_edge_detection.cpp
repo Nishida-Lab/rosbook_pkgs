@@ -49,12 +49,11 @@ public:
 
 int main(int argc, char* argv[])
 {
-    ros::init(argc, argv, "test_edge_detection");
-
     cv::Mat source_image = cv::imread(g_file_path, cv::IMREAD_GRAYSCALE);
     cv::Mat edge_image;
     cv::Sobel(source_image, edge_image, CV_32F, 1, 1, 3);
 
+    ros::init(argc, argv, "test_edge_detection");
     ros::NodeHandle nh;
     ImageConverter ic(nh);
 

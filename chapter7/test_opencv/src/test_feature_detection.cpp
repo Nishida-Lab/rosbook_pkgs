@@ -10,8 +10,6 @@
 
 int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "test_feature_detection");
-
     std::string file_path = ros::package::getPath("test_opencv") + "/img/image1.jpg";
     cv::Mat color_image = cv::imread(file_path, cv::IMREAD_COLOR);
     cv::Mat gray_image;
@@ -28,6 +26,7 @@ int main(int argc, char** argv)
         cv::circle(color_image, it->pt, it->size, cv::Scalar(0, 255, 255), 1, CV_AA);
     }
 
+    ros::init(argc, argv, "test_feature_detection");
     ros::NodeHandle nh;
     image_transport::Publisher image_pub;
     image_transport::ImageTransport img_trans(nh);

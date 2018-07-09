@@ -35,8 +35,6 @@ void extractGoodMatches(cv::Mat descriptors1,
 
 int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "test_feature_detection_matching");
-
     std::string file_path1 = ros::package::getPath("test_opencv") + "/img/image2.jpg";
     cv::Mat color_image1 = cv::imread(file_path1, cv::IMREAD_COLOR);
     std::vector<cv::KeyPoint> keypoints1;
@@ -62,6 +60,7 @@ int main(int argc, char** argv)
             good_matches, result_image, cv::Scalar::all(-1), cv::Scalar::all(-1),
             std::vector<char>(), cv::DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS);
 
+    ros::init(argc, argv, "test_feature_detection_matching");
     ros::NodeHandle nh;
     image_transport::Publisher image_pub;
     image_transport::ImageTransport img_trans(nh);

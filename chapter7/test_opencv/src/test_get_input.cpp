@@ -33,14 +33,13 @@ void on_mouse(int event, int x, int y, int flags, void* param)
 
 int main(int argc, char* argv[])
 {
-    ros::init(argc, argv, "test_get_input");
-
     g_display_image = cv::Mat::zeros(300, 300, CV_8UC3);
     cv::namedWindow(g_window_name,
             CV_WINDOW_AUTOSIZE | CV_WINDOW_KEEPRATIO | CV_GUI_NORMAL);
     cv::imshow(g_window_name, g_display_image);
     cv::setMouseCallback(g_window_name, on_mouse, 0);
 
+    ros::init(argc, argv, "test_get_input");
     ros::NodeHandle nh;
     image_transport::ImageTransport it(nh);
     image_transport::Publisher image_pub = it.advertise("/camera/image_raw", 1);
