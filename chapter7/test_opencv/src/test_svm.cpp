@@ -1,3 +1,8 @@
+#include <ros/ros.h>
+#include <ros/package.h>
+#include <image_transport/image_transport.h>
+#include <sensor_msgs/image_encodings.h>
+#include <cv_bridge/cv_bridge.h>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/ml.hpp>
@@ -10,7 +15,7 @@ cv::Mat makeData(float offset)
     return data;
 }
 
-int main(int, char**)
+int main(int argc, char** argv)
 {
     // (1) 学習データの生成(ディスクリプタの生成)
     cv::Mat positive_data = makeData(0.8);
@@ -51,10 +56,27 @@ int main(int, char**)
 
     cv::Scalar color = (ret >= 0 ? p_color : n_color) + cv::Scalar(255, 0, 0);
     cv::Mat d = 50*data + 100;
-    cv::circle (canvas , cv::Point(d.at<float>(0, 0), d.at<float>(0, 1)), 5, color, -1);
+    cv::circle(canvas, cv::Point(d.at<float>(0, 0), d.at<float>(0, 1)), 5, color, -1);
 
-    cv::imshow("SVM", canvas);
-    cv::waitKey();
+    ros::init(argc, argv, "test_svm");
+    ros::NodeHandle nh;
+    image_transport::Publisher image_pub;
+    image_transport::ImageTransport img_trans(nh);
+    image_pub = img_trans.advertise("/image_svm", 1);
+
+    ros::Rate looprate(5);
+    while (ros::ok())
+    {
+        if(cv::waitKey(1) == 'q')
+            break;
+        cv::imshow("SVM", canvas);
+
+        sensor_msgs::ImagePtr msg =
+            cv_bridge::CvImage(std_msgs::Header(), "bgr8", canvas).toImageMsg();
+        image_pub.publish(msg);
+        ros::spinOnce();
+        looprate.sleep();
+    }
 
     return 0;
 }
