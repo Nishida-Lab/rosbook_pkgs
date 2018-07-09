@@ -6,7 +6,7 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-std::string g_window_name = "display";
+const std::string g_window_name = "display";
 cv::Mat g_display_image;
 
 void on_mouse(int event, int x, int y, int flags, void* param)

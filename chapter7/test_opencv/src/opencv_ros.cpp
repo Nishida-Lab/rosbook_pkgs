@@ -7,7 +7,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-static const std::string OPENCV_WINDOW = "ImageWindow";
+const std::string OPENCV_WINDOW = "ImageWindow";
 
 class ImageConverter
 {

@@ -7,7 +7,7 @@
 int main(int argc, char** argv)
 {
     std::string file_path = ros::package::getPath("test_opencv") + "/img/";
-    cv::Mat source_image = cv::imread(file_path + "image1.jpg", 0);
+    cv::Mat source_image = cv::imread(file_path + "image1.jpg", cv::IMREAD_GRAYSCALE);
     cv::imshow("image", source_image);
     cv::waitKey();
 

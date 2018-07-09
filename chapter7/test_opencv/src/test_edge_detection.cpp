@@ -6,8 +6,8 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-std::string g_window_name = "sobel";
-std::string g_file_path = ros::package::getPath("test_opencv") + "/img/image3.jpg";
+const std::string g_window_name = "sobel";
+const std::string g_file_path = ros::package::getPath("test_opencv") + "/img/image3.jpg";
 
 class ImageConverter
 {
