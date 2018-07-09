@@ -1,0 +1,5 @@
+<launch>
+  <node name="test_edge_detection" pkg="test_opencv" type="test_edge_detection" />
+  <node name="image_view_ori" pkg="image_view" type="image_view" args="image:=/image_ori"/>
+  <node name="image_view_edge" pkg="image_view" type="image_view" args="image:=/image_edge"/>
+</launch>

@@ -17,23 +17,23 @@ catkin_package(
 include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
 
 add_executable(test_opencv src/test_opencv.cpp)
-target_link_libraries(test_opencv ${OpenCV_LIBRARIES})
+target_link_libraries(test_opencv ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 add_executable(test_get_input src/test_get_input.cpp)
-target_link_libraries(test_get_input ${OpenCV_LIBRARIES})
+target_link_libraries(test_get_input ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 add_executable(test_edge_detection src/test_edge_detection.cpp)
-target_link_libraries(test_edge_detection ${OpenCV_LIBRARIES})
+target_link_libraries(test_edge_detection ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 add_executable(test_feature_detection src/test_feature_detection.cpp)
-target_link_libraries(test_feature_detection ${OpenCV_LIBRARIES})
+target_link_libraries(test_feature_detection ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 add_executable(test_feature_detection_matching src/test_feature_detection_matching.cpp)
-target_link_libraries(test_feature_detection_matching ${OpenCV_LIBRARIES})
+target_link_libraries(test_feature_detection_matching ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 add_executable(test_svm src/test_svm.cpp)
-target_link_libraries(test_svm ${OpenCV_LIBRARIES})
+target_link_libraries(test_svm ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
-add_executable(opencv_ros src/opencv_ros.cpp src/opencv_ros.cpp)
+add_executable(opencv_ros src/opencv_ros.cpp)
 target_link_libraries(opencv_ros ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 

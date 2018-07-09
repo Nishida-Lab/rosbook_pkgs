@@ -1,0 +1,4 @@
+<launch>
+  <node name="test_get_input" pkg="test_opencv" type="test_get_input" />
+  <node name="image_view" pkg="image_view" type="image_view" args="image:=/camera/image_raw"/>
+</launch>

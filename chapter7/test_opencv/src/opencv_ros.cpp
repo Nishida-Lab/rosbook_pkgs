@@ -41,6 +41,7 @@ public:
         sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", color_image).toImageMsg();
         image_pub_ori_.publish(msg);
     };
+    
     void imageCb(const sensor_msgs::ImageConstPtr& msg)
     {
         cv_bridge::CvImagePtr cv_ptr;
@@ -51,12 +52,10 @@ public:
         int circle_r = 20;
         int rand_x = (int)rng.uniform(0, cv_ptr->image.cols - circle_r*2);
         int rand_y = (int)rng.uniform(0, cv_ptr->image.rows - circle_r*2);
-        std::cout << rand_x << ", " << rand_y << std::endl;
         cv::circle(cv_ptr->image, cv::Point(rand_x, rand_y), circle_r, CV_RGB(255, 0, 0), -1);
 
         // GUI ウインドウのアップデート
         cv::imshow(OPENCV_WINDOW, cv_ptr->image);
-        cv::waitKey(3);
 
         //結果の描画
         image_pub_drawn_.publish(cv_ptr->toImageMsg());
@@ -65,13 +64,16 @@ public:
 
 int main(int argc , char** argv)
 {
-    ros::init(argc, argv, "image_converter");
+    ros::init(argc, argv, "opencv_ros");
     ros::NodeHandle nh;
     ImageConverter ic(nh);
 
     ros::Rate looprate (5);   // read image at 5Hz
     while(ros::ok())
     {
+        if(cv::waitKey(1) == 'q')
+            break;
+
         ic.publishReadImage();
         ros::spinOnce();
         looprate.sleep();
