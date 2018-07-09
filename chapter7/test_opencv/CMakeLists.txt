@@ -34,6 +34,6 @@ target_link_libraries(test_feature_detection_matching ${OpenCV_LIBRARIES})
 add_executable(test_svm src/test_svm.cpp)
 target_link_libraries(test_svm ${OpenCV_LIBRARIES})
 
-add_executable(opencv_ros_node src/opencv_ros.cpp src/opencv_ros_node.cpp)
-target_link_libraries(opencv_ros_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+add_executable(opencv_ros src/opencv_ros.cpp src/opencv_ros.cpp)
+target_link_libraries(opencv_ros ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
