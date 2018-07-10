@@ -28,8 +28,8 @@ void extractGoodMatches(cv::Mat descriptors1,
     for (int i = 0; i < descriptors1.rows; i++)
     {
         double dist = matches[i].distance;
-        if ( dist < min_dist ) min_dist = dist;
-        if ( dist > max_dist ) max_dist = dist;
+        if (dist < min_dist) min_dist = dist;
+        if (dist > max_dist) max_dist = dist;
     }
     for ( int i = 0; i < descriptors1.rows; i++ )
     { 
