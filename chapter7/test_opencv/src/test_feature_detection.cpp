@@ -20,7 +20,8 @@ int main(int argc, char** argv)
     detector->detect(gray_image, keypoints);
 
     std::vector<cv::KeyPoint>::iterator it = keypoints.begin();
-    for(; it!=keypoints.end(); ++it) {
+    for (; it!=keypoints.end(); ++it)
+    {
         cv::circle(color_image, it->pt, 1, cv::Scalar(0, 0, 255), -1);
         cv::circle(color_image, it->pt, it->size, cv::Scalar(0, 255, 255), 1, CV_AA);
     }
@@ -34,7 +35,7 @@ int main(int argc, char** argv)
     ros::Rate looprate (5);   // read image at 5Hz
     while (ros::ok())
     {
-        if(cv::waitKey(1) == 'q')
+        if (cv::waitKey(1) == 'q')
             break;
         cv::imshow("Features", color_image);
 

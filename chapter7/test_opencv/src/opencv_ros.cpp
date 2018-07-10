@@ -69,9 +69,9 @@ int main(int argc, char** argv)
     ImageConverter ic(nh);
 
     ros::Rate looprate (5);   // read image at 5Hz
-    while(ros::ok())
+    while (ros::ok())
     {
-        if(cv::waitKey(1) == 'q')
+        if (cv::waitKey(1) == 'q')
             break;
 
         ic.publishReadImage();

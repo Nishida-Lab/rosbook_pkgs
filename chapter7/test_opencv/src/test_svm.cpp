@@ -47,7 +47,8 @@ int main(int argc, char** argv)
     cv::Mat canvas= cv::Mat::zeros(200, 200, CV_8UC3);
     cv::Scalar p_color = cv::Scalar(0, 0, 255);
     cv::Scalar n_color = cv::Scalar(0, 255, 0);
-    for (int i=0; i<positive_data.rows; i++) {
+    for (int i=0; i<positive_data.rows; i++)
+    {
         cv::Mat p = 50*positive_data(cv::Rect(0, i, 2, 1)) + 100;
         cv::Mat n = 50*negative_data(cv::Rect(0, i, 2, 1)) + 100;
         cv::circle(canvas, cv::Point(p.at<float>(0, 0), p.at<float>(0, 1)), 1, p_color, -1);
@@ -67,7 +68,7 @@ int main(int argc, char** argv)
     ros::Rate looprate(5);
     while (ros::ok())
     {
-        if(cv::waitKey(1) == 'q')
+        if (cv::waitKey(1) == 'q')
             break;
         cv::imshow("SVM", canvas);
 

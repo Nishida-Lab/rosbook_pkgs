@@ -11,7 +11,8 @@ cv::Mat g_display_image;
 
 void on_mouse(int event, int x, int y, int flags, void* param)
 {
-    switch (event) {
+    switch (event)
+    {
     case CV_EVENT_MOUSEMOVE:
         g_display_image.at<cv::Vec3b>(y, x).val[1] = 255;
         g_display_image.at<cv::Vec3b>(y, x).val[2] = 255;
@@ -46,9 +47,9 @@ int main(int argc, char* argv[])
     sensor_msgs::ImagePtr msg;
 
     ros::Rate looprate (30);
-    while(ros::ok())
+    while (ros::ok())
     {
-        if(cv::waitKey(1) == 'q')
+        if (cv::waitKey(1) == 'q')
             break;
 
         msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", g_display_image).toImageMsg();

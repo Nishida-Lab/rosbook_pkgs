@@ -19,21 +19,22 @@ void detectFeature(cv::Mat& source_image,
     cv::Ptr<cv::DescriptorExtractor> descriptor_extractor = 
         cv::ORB::create();
     descriptor_extractor->compute(gray_image, keypoints, descriptors);
-
 }
 
 void extractGoodMatches(cv::Mat descriptors1,
         std::vector<cv::DMatch>& matches, std::vector<cv::DMatch>& good_matches)
 {
     double max_dist = 0; double min_dist = 100;
-    for( int i = 0; i < descriptors1.rows; i++ )
-    { double dist = matches[i].distance;
-        if( dist < min_dist ) min_dist = dist;
-        if( dist > max_dist ) max_dist = dist;
+    for (int i = 0; i < descriptors1.rows; i++)
+    {
+        double dist = matches[i].distance;
+        if ( dist < min_dist ) min_dist = dist;
+        if ( dist > max_dist ) max_dist = dist;
     }
-    for( int i = 0; i < descriptors1.rows; i++ )
-    { if( matches[i].distance <= cv::max(2*min_dist, 0.02) )
-        { good_matches.push_back( matches[i]); }
+    for ( int i = 0; i < descriptors1.rows; i++ )
+    { 
+        if (matches[i].distance <= cv::max(2*min_dist, 0.02))
+            good_matches.push_back( matches[i]);
     }
 }
 
@@ -71,8 +72,9 @@ int main(int argc, char** argv)
     image_pub = img_trans.advertise("/image_feature_matching", 1);
 
     ros::Rate looprate (5);
-    while (ros::ok()) {
-        if(cv::waitKey(1) == 'q')
+    while (ros::ok())
+    {
+        if (cv::waitKey(1) == 'q')
             break;
         cv::imshow("Matching result", result_image);
 

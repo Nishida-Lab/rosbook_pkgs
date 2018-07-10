@@ -58,9 +58,9 @@ int main(int argc, char* argv[])
     ImageConverter ic(nh);
 
     ros::Rate looprate (5);
-    while(ros::ok())
+    while (ros::ok())
     {
-        if(cv::waitKey(1) == 'q')
+        if (cv::waitKey(1) == 'q')
             break;
         cv::imshow(g_window_name, edge_image);
 
