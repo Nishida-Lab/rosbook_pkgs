@@ -6,7 +6,6 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/features2d/features2d.hpp>
-#include <opencv2/xfeatures2d/nonfree.hpp>
 
 int main(int argc, char** argv)
 {
@@ -15,7 +14,7 @@ int main(int argc, char** argv)
     cv::Mat gray_image;
     cv::cvtColor(color_image, gray_image, CV_BGR2GRAY);
 
-    cv::Ptr<cv::xfeatures2d::SURF> detector = cv::xfeatures2d::SURF::create();
+    cv::Ptr<cv::MSER> detector = cv::MSER::create();
     
     std::vector<cv::KeyPoint> keypoints;
     detector->detect(gray_image, keypoints);

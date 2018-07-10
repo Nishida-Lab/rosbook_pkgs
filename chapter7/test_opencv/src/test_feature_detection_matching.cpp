@@ -6,7 +6,6 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/features2d/features2d.hpp>
-#include <opencv2/xfeatures2d/nonfree.hpp>
 
 void detectFeature(cv::Mat& source_image,
         std::vector<cv::KeyPoint>& keypoints, cv::Mat& descriptors)
@@ -14,8 +13,13 @@ void detectFeature(cv::Mat& source_image,
     cv::Mat gray_image;
     cv::cvtColor(source_image, gray_image, CV_BGR2GRAY);
 
-    cv::Ptr<cv::xfeatures2d::SURF> detector = cv::xfeatures2d::SURF::create();
-    detector->detectAndCompute(source_image, cv::Mat(), keypoints, descriptors);
+    cv::Ptr<cv::MSER> detector = cv::MSER::create();
+    detector->detect(source_image, keypoints);
+
+    cv::Ptr<cv::DescriptorExtractor> descriptor_extractor = 
+        cv::ORB::create();
+    descriptor_extractor->compute(gray_image, keypoints, descriptors);
+
 }
 
 void extractGoodMatches(cv::Mat descriptors1,
