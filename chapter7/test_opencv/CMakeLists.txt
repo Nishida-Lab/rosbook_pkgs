@@ -19,6 +19,9 @@ include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
 add_executable(test_opencv src/test_opencv.cpp)
 target_link_libraries(test_opencv ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
+add_executable(opencv_ros src/opencv_ros.cpp)
+target_link_libraries(opencv_ros ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
 add_executable(test_get_input src/test_get_input.cpp)
 target_link_libraries(test_get_input ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
@@ -33,7 +36,4 @@ target_link_libraries(test_feature_detection_matching ${catkin_LIBRARIES} ${Open
 
 add_executable(test_svm src/test_svm.cpp)
 target_link_libraries(test_svm ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
-
-add_executable(opencv_ros src/opencv_ros.cpp)
-target_link_libraries(opencv_ros ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
