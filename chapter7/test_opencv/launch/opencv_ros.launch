@@ -1,0 +1,4 @@
+<launch>
+  <node name="opencv_ros" pkg="test_opencv" type="opencv_ros" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find test_opencv)/rviz/opencv_ros.rviz" required="true" />
+</launch>
