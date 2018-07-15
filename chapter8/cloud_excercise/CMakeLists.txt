@@ -41,7 +41,7 @@ target_link_libraries(cloud_clusterer ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 #############
 ## Install ##
 #############
-foreach(dir data launch rviz config)
+foreach(dir data launch rviz)
   install(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
