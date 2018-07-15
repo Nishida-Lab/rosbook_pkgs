@@ -5,7 +5,7 @@
   
   <xacro:macro name="gim30_v0" params="parent *joint_origin">
 	<joint name="gim30_joint" type="fixed">
-      <insert_block name="joint_origin" />
+      <xacro:insert_block name="joint_origin" />
       <parent link="${parent}"/>
       <child link="gim30_link"/>
 	</joint>
