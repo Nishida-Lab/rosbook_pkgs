@@ -1,4 +1,4 @@
-# rosbook packages
+# rosbook packages [![Build Status](https://travis-ci.org/Nishida-Lab/rosbook_pkgs.svg?branch)](https://travis-ci.org/Nishida-Lab/rosbook_pkgs) 
 
 このリポジトリは西田健先生が出版するROS本のサンプルコードをまとめるものです。
 このリポジトリをワークスペースにクローンすれば動くようにすべきだと思います。
