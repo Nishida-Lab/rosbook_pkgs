@@ -172,7 +172,7 @@ include_directories(
 
 set(LAUNCH_DIRS launch)
 
-foreach(dir map ${LAUNCH_DIRS})
+foreach(dir ${LAUNCH_DIRS})
   install(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
