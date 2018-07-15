@@ -78,7 +78,7 @@
   <!-- Wheel -->
   <xacro:wheel_gazebo_v0 prefix="right"/>
   <xacro:wheel_gazebo_v0 prefix="left"/>
-  <xacro:wheel_gazebo_control_v0 rate="25"/>
+  <!--xacro:wheel_gazebo_control_v0 rate="25"/-->
 
   <!-- LRF -->
   <xacro:lrf_gazebo_v0 prefix="front"

@@ -6,7 +6,7 @@
 
   <xacro:macro name="lrf_v0" params="prefix parent *joint_origin">
 	<joint name="${prefix}_lrf_joint" type="fixed">
-	  <insert_block name="joint_origin"/>
+	  <xacro:insert_block name="joint_origin"/>
 	  <parent link="${parent}"/>
 	  <child link="${prefix}_lrf_link"/>
 	</joint>

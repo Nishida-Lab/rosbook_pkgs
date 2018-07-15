@@ -5,16 +5,16 @@
   <xacro:include filename="$(find fourth_robot_description)/urdf/wheel/wheel.transmission.xacro"/>
   <xacro:include filename="$(find fourth_robot_description)/urdf/wheel/wheel.gazebo.xacro"/>
 
-  <property name="wheel_radius" value="0.20316"/>
-  <property name="wheel_length" value="0.032"/>
-  <property name="wheel_mass" value="2.0"/>
+  <xacro:property name="wheel_radius" value="0.20316"/>
+  <xacro:property name="wheel_length" value="0.032"/>
+  <xacro:property name="wheel_mass" value="2.0"/>
   
   <xacro:macro name="wheel_v0" params="prefix parent *joint_origin *joint_axis">
 	<joint name="${prefix}_wheel_joint" type="continuous">
-	  <insert_block name="joint_origin"/>
+	  <xacro:insert_block name="joint_origin"/>
 	  <parent link="${parent}"/>
 	  <child link="${prefix}_wheel_link"/>
-	  <insert_block name="joint_axis"/>
+	  <xacro:insert_block name="joint_axis"/>
 	</joint>
 
 	<link name="${prefix}_wheel_link">

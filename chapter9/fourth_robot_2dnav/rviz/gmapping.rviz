@@ -284,36 +284,6 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Class: jsk_rviz_plugin/TabletViewController
-      Control Mode: Orbit
-      Distance: 33.2152
-      Enable Stereo Rendering:
-        Stereo Eye Separation: 0.06
-        Stereo Focal Distance: 1
-        Swap Stereo Eyes: false
-        Value: false
-      Eye:
-        X: -21.2605
-        Y: 0.728007
-        Z: 20.2649
-      Focus:
-        X: 1.47552
-        Y: -0.0459718
-        Z: -3.9368
-      Maintain Vertical Axis: true
-      Mouse Enabled: true
-      Name: Current View
-      Near Clip Distance: 0.01
-      Placement Mouse Point: /rviz/current_mouse_point
-      Placement Publish Topic: /rviz/current_camera_placement
-      Placement Topic: /rviz/camera_placement
-      Target Frame: base_footprint
-      Transition Time: 0.5
-      Up:
-        X: 0
-        Y: 0
-        Z: 1
-      Value: TabletViewController (jsk_rviz_plugin)
     Saved: ~
 Window Geometry:
   Displays:

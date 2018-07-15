@@ -5,7 +5,7 @@
 
   <xacro:macro name="gps_v0" params="parent *joint_origin">
 	<joint name="gps_joint" type="fixed">
-	  <insert_block name="joint_origin"/>
+	  <xacro:insert_block name="joint_origin"/>
 	  <parent link="${parent}"/>
 	  <child link="gps_link"/>
 	</joint>

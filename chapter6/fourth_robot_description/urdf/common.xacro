@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <property name="M_PI" value="3.14159274"/>
+  <xacro:property name="M_PI" value="3.14159274"/>
 
   <xacro:macro name="cylinder_inertial" params="mass radius length">
 	<mass value="${mass}"/>

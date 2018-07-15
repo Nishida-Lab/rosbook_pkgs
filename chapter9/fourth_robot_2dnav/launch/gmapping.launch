@@ -8,5 +8,5 @@
   <node name="playbag" pkg="rosbag" type="play"
 		args="--clock $(arg bag_filename)" />
   
-  <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find fourth_robot_2dnav)/rviz/move_base.rviz" />
+  <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find fourth_robot_2dnav)/rviz/gmapping.rviz" />
 </launch>
