@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>chapter7</name>
+  <version>0.1.0</version>
+  <description>The chapter7 package</description>
+
+  <maintainer email="nishidatakeshilab@gmail.com">Nishida Lab</maintainer>
+  <author email="p595201m@mail.kyutech.jp">MoriKen</author>
+
+  <license>BSD</license>
+  
+  <url type="repository">https://github.com/Nishida-Lab/rosbook_pkgs.git</url>
+  <url type="bugtracker">https://github.com/Nishida-Lab/rosbook_pkgs/issues</url>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <run_depend>test_opencv</run_depend>
+  
+  <export>
+	<metapackage />
+  </export>
+</package>
