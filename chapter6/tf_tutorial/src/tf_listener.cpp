@@ -4,7 +4,6 @@
 #include <tf/LinearMath/Vector3.h>
 #include <tf/transform_listener.h>
 
-
 int main(int argc, char** argv)
 {
   ros::init(argc, argv, "tf_listener");

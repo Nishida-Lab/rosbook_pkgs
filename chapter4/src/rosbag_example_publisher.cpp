@@ -5,7 +5,6 @@
 
 #include <std_msgs/Char.h>
 
-
 int main(int argc, char** argv)
 {
   // ros init

@@ -6,7 +6,6 @@
 #include <std_msgs/Char.h>
 #include <std_msgs/Float64.h>
 
-
 class RosbagExample
 {
 public:
@@ -22,7 +21,6 @@ private:
   double average;
   double data_num;
 };
-
 
 RosbagExample::RosbagExample() :
   average(0),
@@ -46,7 +44,6 @@ void RosbagExample::Callback(const std_msgs::Char::ConstPtr& msg)
   pub.publish(pub_msg);
   ROS_INFO("Published");
 }
-
 
 int main(int argc, char** argv)
 {

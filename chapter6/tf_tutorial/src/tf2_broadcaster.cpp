@@ -5,7 +5,6 @@
 
 #include <geometry_msgs/TransformStamped.h>
 
-
 int main(int argc, char** argv)
 {
   ros::init(argc, argv, "tf2_broadcaster");
