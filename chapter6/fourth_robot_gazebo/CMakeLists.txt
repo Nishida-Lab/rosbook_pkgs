@@ -5,7 +5,7 @@ find_package(catkin REQUIRED)
 #############
 ## Install ##
 #############
-foreach(dir launch config world) 
+foreach(dir launch config worlds) 
   install(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
