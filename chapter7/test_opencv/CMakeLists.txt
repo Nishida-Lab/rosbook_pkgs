@@ -37,3 +37,19 @@ target_link_libraries(test_feature_detection_matching ${catkin_LIBRARIES} ${Open
 add_executable(test_svm src/test_svm.cpp)
 target_link_libraries(test_svm ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
+#############
+## Install ##
+#############
+foreach(dir launch img rviz)
+  install(DIRECTORY ${dir}/
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
+endforeach(dir)
+
+
+#############
+## Testing ##
+#############
+if (CATKIN_ENABLE_TESTING)
+  find_package(roslaunch REQUIRED)
+  roslaunch_add_file_check(launch)
+endif()
