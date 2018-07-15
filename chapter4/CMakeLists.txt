@@ -34,18 +34,3 @@ target_link_libraries(rosbag_example_publisher ${catkin_LIBRARIES})
 add_executable(rosbag_example_subscriber src/rosbag_example_subscriber.cpp)
 target_link_libraries(rosbag_example_subscriber ${catkin_LIBRARIES})
 
-#############
-## Install ##
-#############
-
-install(TARGETS
-  rqtplot_example
-  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
-
-foreach(dir bag config launch output)
-    install(DIRECTORY ${dir}/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
-endforeach(dir)
