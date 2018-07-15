@@ -39,3 +39,20 @@ target_link_libraries(tf_listener ${catkin_LIBRARIES})
 
 add_executable(tf2_listener src/tf2_listener.cpp)
 target_link_libraries(tf2_listener ${catkin_LIBRARIES})
+
+#############
+## Install ##
+#############
+foreach(dir launch rviz)
+  install(DIRECTORY ${dir}/
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
+endforeach(dir)
+
+
+#############
+## Testing ##
+#############
+if (CATKIN_ENABLE_TESTING)
+  find_package(roslaunch REQUIRED)
+  roslaunch_add_file_check(launch)
+endif()
