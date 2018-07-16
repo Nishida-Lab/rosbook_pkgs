@@ -11,7 +11,7 @@ catkin_package(
   INCLUDE_DIRS 
   LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS cv_bridge image_transport roscpp rospy sensor_msgs std_msgs
-  DEPENDS system_lib
+  DEPENDS
 )
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})

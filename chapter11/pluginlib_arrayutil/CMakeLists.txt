@@ -10,11 +10,11 @@ catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS pluginlib roscpp 
-  DEPENDS Boost system_lib
+  DEPENDS
 )
 
 include_directories(
-  include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS}
+  include ${catkin_INCLUDE_DIRS}
 )
 
 # Declare a C++ library
