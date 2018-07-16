@@ -9,7 +9,7 @@ catkin_package(
 #############
 ## Install ##
 #############
-foreach(dir meshes urdf launch)
+foreach(dir meshes urdf launch robots)
   install(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
