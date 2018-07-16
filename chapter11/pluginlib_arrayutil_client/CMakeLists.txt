@@ -13,10 +13,26 @@ catkin_package(
 )
 
 include_directories(
-  include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS}
+  include ${catkin_INCLUDE_DIRS}
 )
 
 # Declare a C++ executable
 add_executable(client_node src/client_node.cpp src/pluginlib_arrayutil_client.cpp)
 target_link_libraries(client_node ${catkin_LIBRARIES})
 
+#############
+## Install ##
+#############
+foreach(dir launch)
+  install(DIRECTORY ${dir}/
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
+endforeach(dir)
+
+
+#############
+## Testing ##
+#############
+if (CATKIN_ENABLE_TESTING)
+  find_package(roslaunch REQUIRED)
+  roslaunch_add_file_check(launch)
+endif()

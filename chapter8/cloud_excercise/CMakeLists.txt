@@ -38,3 +38,19 @@ target_link_libraries(cloud_planar_segmenter ${catkin_LIBRARIES} ${PCL_LIBRARIES
 add_executable(cloud_clusterer src/cloud_clusterer.cpp)
 target_link_libraries(cloud_clusterer ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 
+#############
+## Install ##
+#############
+foreach(dir data launch rviz)
+  install(DIRECTORY ${dir}/
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
+endforeach(dir)
+
+
+#############
+## Testing ##
+#############
+if (CATKIN_ENABLE_TESTING)
+  find_package(roslaunch REQUIRED)
+  roslaunch_add_file_check(launch)
+endif()

@@ -27,5 +27,6 @@
   <run_depend>tf</run_depend>
   <run_depend>tf2</run_depend>
   <run_depend>tf2_ros</run_depend>
-
+  <run_depend>rqt_tf_tree</run_depend>
+  <run_depend>rviz</run_depend>
 </package>

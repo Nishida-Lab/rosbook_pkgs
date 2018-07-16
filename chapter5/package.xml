@@ -6,10 +6,11 @@
 
   <maintainer email="k104073r@mail.kyutech.jp">RyodoTanaka</maintainer>
 
-  <license>TODO</license>
+  <license>BSD</license>
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <run_depend>image_view</run_depend>
   <run_depend>usb_cam</run_depend>
 
 </package>
