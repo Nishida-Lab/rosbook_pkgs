@@ -17,8 +17,9 @@ env:
     - ROS_PARALLEL_TEST_JOBS=-j1
     - NOT_TEST_INSTALL=true
   matrix:
-    - ROS_DISTRO="kinetic"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu
-    - ROS_DISTRO="kinetic"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu
+    - ROS_DISTRO="kinetic"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu ROSDEP_SKIP_KEYS="fourth_robot_description fourth_robot_control"
+install: 
+    - ROS_DISTRO="kinetic"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu ROSDEP_SKIP_KEYS="fourth_robot_description fourth_robot_control"
 install:
   - git clone https://github.com/ros-industrial/industrial_ci.git .ci_config
 script:
