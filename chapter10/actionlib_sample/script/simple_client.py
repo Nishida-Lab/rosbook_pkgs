@@ -18,7 +18,7 @@ if __name__ == '__main__':
   goal.samples = 10 ## number of samples
   act.send_goal(goal, feedback_cb = feedback_callback)
   rospy.loginfo('waiting result')
-  ret = act.wait_for_result(rospy.Duration(100))
+  ret = act.wait_for_result(rospy.Duration(5))
   if(ret):
     rospy.loginfo('get result: %s'%(act.get_result()))
     rospy.loginfo('result state: %s'%(actionlib.GoalStatus.to_string(act.get_state())))
