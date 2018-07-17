@@ -14,6 +14,7 @@
   
   <buildtool_depend>catkin</buildtool_depend>
   
+  <run_depend>actionlib_sample</run_depend>
   <run_depend>smach_sample</run_depend>
   
   <export>
