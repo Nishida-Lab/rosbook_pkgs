@@ -10,6 +10,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <run_depend>dynamixel_controllers</run_depend>
   <run_depend>image_view</run_depend>
   <run_depend>usb_cam</run_depend>
 
