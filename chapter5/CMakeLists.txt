@@ -1,12 +1,13 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(chapter5)
 
-find_package(catkin REQUIRED)
-catkin_package(CATKIN_DEPENDS)
+find_package(catkin REQUIRED COMPONENTS
+    rospy sensor_msgs std_msgs)
 
-set(LAUNCH_DIRS launch)
+catkin_package(
+    CATKIN_DEPENDS rospy sensor_msgs std_msgs)
 
-foreach(dir ${LAUNCH_DIRS})
+foreach(dir launch config script)
   install(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
