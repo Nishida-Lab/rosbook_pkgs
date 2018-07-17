@@ -25,7 +25,7 @@ class AveragingSVR(object):
   def execute_cb(self, goal):
     rospy.loginfo('execute callback: %s'%(goal))
     feedback = AveragingAction().action_feedback.feedback
-    result = AverangAction().action_result.result
+    result = AveragingAction().action_result.result
     ## execute loop
     rate = rospy.Rate(1/(0.01 + 0.99*random.random()))
     samples= []

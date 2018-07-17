@@ -40,13 +40,13 @@ class AveragingSVR2(object):
     feedback.sample = len(self._samples)
     feedback.data = msg.data
     feedback.mean = sum(self._samples)/len(self._samples)
-    feedback.std_dev = self.std_dev(samples)
+    feedback.std_dev = self.std_dev(self._samples)
     self._action.publish_feedback(feedback)
     ## sending result
     if(len(self._samples) >= self._goal.samples):
       result = AveragingAction().action_result.result
-      result.mean = sum(samples)/len(samples)
-      result.std_dev = self.std_dev(samples)
+      result.mean = sum(self._samples)/len(self._samples)
+      result.std_dev = self.std_dev(self._samples)
       rospy.loginfo('result: %s'%(result))
       self.reset_numbers()
       if (result.mean > 0.5):
