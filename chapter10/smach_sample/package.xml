@@ -17,5 +17,6 @@
   <exec_depend>smach_msgs</exec_depend>
   <exec_depend>smach_viewer</exec_depend>
   <exec_depend>smach_ros</exec_depend>
+  <test_depend>roslaunch</test_depend>
 
 </package>
