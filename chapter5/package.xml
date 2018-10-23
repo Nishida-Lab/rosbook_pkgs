@@ -13,7 +13,7 @@
   <depend>rospy</depend>
   <depend>sensor_msgs</depend>
   <depend>std_msgs</depend>
-  <exec_depend>dynamixel_contlollers</exec_depend>
+  <exec_depend>dynamixel_controllers</exec_depend>
   <exec_depend>image_view</exec_depend>
   <exec_depend>usb_cam</exec_depend>
   <test_depend>roslaunch</test_depend>
