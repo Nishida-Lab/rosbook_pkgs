@@ -1,0 +1,10 @@
+<launch>
+    <node name="$(anon spawn1)" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-sdf -database table -model table_model -x 1.6 -z -0.4 -Y 1.570" />
+
+    <node name="$(anon spawn2)" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-sdf -database beer -model beer_model -x 1.38 -y -0.1 -z 1.00" />
+
+    <node name="$(anon spawn3)" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-sdf -database plastic_cup -model cup_model -x 1.38 -y 0.2 -z 1.00" />
+</launch>
