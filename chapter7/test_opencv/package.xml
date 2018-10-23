@@ -10,7 +10,6 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   <depend>cv_bridge</depend>
-  <depend>opencv_ros</depend>
   <depend>roscpp</depend>
   <depend>rospy</depend>
   <depend>image_transport</depend>
