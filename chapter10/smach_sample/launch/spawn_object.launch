@@ -1,10 +1,11 @@
 <launch>
+    <param name="table_sdf" textfile="$(find smach_sample)/sdf/table/model-1_4.sdf" />
+    <param name="beer_sdf" textfile="$(find smach_sample)/sdf/beer/model-1_4.sdf" />
+    <param name="plastic_cup_sdf" textfile="$(find smach_sample)/sdf/plastic_cup/model.sdf" />
     <node name="$(anon spawn1)" pkg="gazebo_ros" type="spawn_model" output="screen"
-        args="-sdf -database table -model table_model -x 1.6 -z -0.4 -Y 1.570" />
-
+        args="-sdf -param table_sdf -model table_model -x 1.6 -z -0.4 -Y 1.570" />
     <node name="$(anon spawn2)" pkg="gazebo_ros" type="spawn_model" output="screen"
-        args="-sdf -database beer -model beer_model -x 1.38 -y -0.1 -z 1.00" />
-
+        args="-sdf -param beer_sdf -model beer_model -x 1.38 -y -0.1 -z 0.66" />
     <node name="$(anon spawn3)" pkg="gazebo_ros" type="spawn_model" output="screen"
-        args="-sdf -database plastic_cup -model cup_model -x 1.38 -y 0.2 -z 1.00" />
+        args="-sdf -param plastic_cup_sdf -model cup_model -x 1.38 -y 0.2 -z 0.66" />
 </launch>
