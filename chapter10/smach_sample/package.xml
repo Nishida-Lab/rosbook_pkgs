@@ -9,9 +9,14 @@
   <license>MIT</license>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
   <depend>rospy</depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>pr2_gazebo</exec_depend>
   <exec_depend>smach</exec_depend>
-  <exec_depend>smach_ros</exec_depend>
   <exec_depend>smach_msgs</exec_depend>
+  <exec_depend>smach_viewer</exec_depend>
+  <exec_depend>smach_ros</exec_depend>
+  <test_depend>roslaunch</test_depend>
 
 </package>
