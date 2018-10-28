@@ -14,7 +14,7 @@ roslaunch smach_sample spawn_object.launch
 roslaunch smach_sample spawn_table.launch
 ```
 
-上記コマンドでテーブルがspawnされたことを確認した後に、下記コマンドを実行する。
+上記コマンドでテーブルがspawnされたことを確認した後に、下記コマンドを実行します。
 
 ```bash
 roslaunch smach_sample spawn_beer_cup.launch
