@@ -2,6 +2,28 @@
 
 <a href="//af.moshimo.com/af/c/click?a_id=721029&p_id=170&pc_id=185&pl_id=4062&s_v=b5Rz2P0601xu&url=http%3A%2F%2Fwww.amazon.co.jp%2Fexec%2Fobidos%2FASIN%2F462767581X" target="_blank" ><img src="https://images-na.ssl-images-amazon.com/images/I/5138TndGCwL.jpg" border="0" ></a><img src="//i.moshimo.com/af/i/impression?a_id=721029&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;">
 
+## インストール方法
+### サンプルプログラムの取得
+```bash
+cd ~/<catkin_ws>/src
+git clone https://github.com/Nishida-Lab/rosbook_pkgs.git
+```
+
+### 依存パッケージの解決
+```bash
+cd ~/<catkin_ws>
+sudo rosdep init
+rosdep update
+rosdep install --from-paths src --ignore-src -r -y
+```
+
+### ビルド
+```bash
+cd ~/<catkin_ws>
+catkin_make
+source devel/setup.bash
+```
+
 ## 本の概要
 
 - タイトル：実用ロボット開発のためのROSプログラミング
