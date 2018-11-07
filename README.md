@@ -69,7 +69,7 @@ source devel/setup.bash
 ### 英語
 ```
 @book{practical-ros-programming_en,
-  title     = {ROS Robot Programming for practical robotics developpment},
+  title     = {ROS Robot Programming for practical robotics development},
   author    = {Takeshi Nishida，Masaru Morita，Hiroyuki Okada，Yoshitaka Hara，Kimitoshi Yamazaki，Hakaru Tamukoh，Takashi Kakiuchi，Kazuya Ohkawa，Isao Saito，Ryodo Tanaka, Yuta Arita，Yutaro Ishida},
   month     = {10},
   year      = {2018},
