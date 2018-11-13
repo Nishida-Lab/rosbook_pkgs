@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 2.8.3)
 project(smach_sample)
 
 find_package(catkin REQUIRED COMPONENTS
+  actionlib
+  actionlib_msgs
+  std_msgs
+  pr2_controllers_msgs
   roscpp
   rospy
   smach
@@ -12,8 +16,12 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
  LIBRARIES ${PROJECT_NAME}
  INCLUDE_DIRS 
- CATKIN_DEPENDS roscpp rospy
- DEPENDS
+ CATKIN_DEPENDS
+   actionlib
+   actionlib_msgs
+   pr2_controllers_msgs
+   std_msgs
+   roscpp
 )
 
 include_directories(${catkin_INCLUDE_DIRS})
