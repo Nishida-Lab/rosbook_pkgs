@@ -35,6 +35,7 @@ source devel/setup.bash
 - サイズ：B5変形
 
 ## 目次
+出版後の修正点や正誤表については、各章のディレクトリ内に配置している`README.md`を参照して下さい。
 - 第1章 ROSとは何か?
 - 第2章 ROSの準備
 - 第3章 ROSの仕組み
@@ -44,8 +45,8 @@ source devel/setup.bash
 - 第7章 コンピュータビジョン
 - 第8章 ポイントクラウド
 - 第9章 ナビゲーション
-- 第10章 ロボットの行動監視と制御
-- 第11章 プラグインの開発
+- [第10章 ロボットの行動監視と制御](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/chapter10)
+- [第11章 プラグインの開発](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/chapter11)
 - 第12章 テストコードの作成
 - 第13章 Travis CIとの連携
 - 第14章 MATLABとの統合
@@ -86,3 +87,4 @@ source devel/setup.bash
 - [楽天ブックス](https://books.rakuten.co.jp/rb/15628639/?scid=af_pc_etc&sc2id=af_103_1_10000645)
 - [honto](https://honto.jp/netstore/search.html?gnrcd=1&k=462767581X&srchf=1&srchGnrNm=1)
 - [図書館](https://calil.jp/book/462767581X)
+
