@@ -1,0 +1,11 @@
+<launch>
+  <!--include file="$(find smach_sample)/launch/spawn_table.launch"/-->
+  <param name="table_sdf" textfile="$(find smach_sample)/sdf/table/model-1_4.sdf" />
+  <node name="$(anon spawn1)" pkg="gazebo_ros" type="spawn_model" output="screen"
+      args="-sdf -param table_sdf -model table_model -x 1.6 -z -0.4 -Y 1.570" />
+  <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+    <arg name="time" value="1" />
+    <arg name="pkg" value="smach_sample" />
+    <arg name="file" value="spawn_beer_cup.launch" />
+  </include>
+</launch>
