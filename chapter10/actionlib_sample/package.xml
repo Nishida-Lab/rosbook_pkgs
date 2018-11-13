@@ -12,6 +12,9 @@
   <depend>actionlib</depend>
   <depend>actionlib_msgs</depend>
   <depend>actionlib_tutorials</depend>
+  <depend>pr2_controllers_msgs</depend>
   <depend>rospy</depend>
+  <depend>roscpp</depend>
   <depend>std_msgs</depend>
+
 </package>
