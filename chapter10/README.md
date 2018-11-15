@@ -1,3 +1,24 @@
+# 正誤表
+|   page  |  誤  |  正  |
+| ------- | ---- | ---- |
+|  p.216  | ソースコード 10-6 `spawn_object.launch` | 後述の通り置き換え． |
+|  p.216  | ... テーブルにビールとコップが置かれている状況になります． | ... テーブルにビールとコップが置かれている状況になります．このサンプルでは「timed_roslaunch」を使用してビールとコップの設置時間を遅らせることで、安定した環境構築ができる工夫がされています． |
+
+### spawn_object.launch
+```xml
+<launch>
+  <param name="table_sdf" textfile="$(find smach_sample)/sdf/table/model-1_4.sdf" />
+  <node name="$(anon spawn1)" pkg="gazebo_ros" type="spawn_model" output="screen"
+      args="-sdf -param table_sdf -model table_model -x 1.6 -z -0.4 -Y 1.570" />
+  <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+    <arg name="time" value="1" />
+    <arg name="pkg" value="smach_sample" />
+    <arg name="file" value="spawn_beer_cup.launch" />
+  </include>
+</launch>
+```
+
+# トラブルシューティング
 ## spawn_object.launch の使用について
 
 ### 現象
