@@ -36,19 +36,19 @@ source devel/setup.bash
 
 ## 目次
 出版後の修正点や正誤表については、各章のディレクトリ内に配置している`README.md`を参照して下さい。
-- 第1章 ROSとは何か?
+- [第1章 ROSとは何か?](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/chapter1)
 - 第2章 ROSの準備
 - 第3章 ROSの仕組み
 - 第4章 可視化とデバッグ
 - 第5章 センサとアクチュエータ
-- 第6章 3Dモデリングと制御シミュレーション
-- 第7章 コンピュータビジョン
+- [第6章 3Dモデリングと制御シミュレーション](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/chapter6)
+- [第7章 コンピュータビジョン](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/chapter7)
 - 第8章 ポイントクラウド
 - 第9章 ナビゲーション
 - [第10章 ロボットの行動監視と制御](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/chapter10)
 - [第11章 プラグインの開発](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/chapter11)
 - 第12章 テストコードの作成
-- 第13章 Travis CIとの連携
+- [第13章 Travis CIとの連携](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/chapter13)
 - 第14章 MATLABとの統合
 - 第15章 システム統合(ロボットを使ってみよう)
 
