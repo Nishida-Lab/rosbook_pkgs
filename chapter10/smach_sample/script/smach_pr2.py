@@ -111,8 +111,8 @@ if __name__ == '__main__':
         init_sub = smach.StateMachine(outcomes=['success'])
         with init_sub:
             gripper_open  = Pr2GripperCommandGoal()
-            gripper_open.command.position = 0.09
-            gripper_open.command.max_effort = 10.0
+            gripper_open.command.position = 0.025
+            gripper_open.command.max_effort = 2000
             smach.StateMachine.add('Open_gripper',
                                    SimpleActionState('/l_gripper_controller/gripper_action',
                                                      Pr2GripperCommandAction,

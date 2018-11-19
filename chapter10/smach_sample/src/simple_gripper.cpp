@@ -30,8 +30,8 @@ public:
   //Open the gripper
   void open(){
     pr2_controllers_msgs::Pr2GripperCommandGoal open;
-    open.command.position = 0.09;
-    open.command.max_effort = 10.0;  // Do not limit effort (negative)
+    open.command.position = 0.025;
+    open.command.max_effort = -1.0;  // Do not limit effort (negative)
     
     ROS_INFO("Sending open goal");
     gripper_client_->sendGoal(open);
@@ -46,7 +46,7 @@ public:
   void close(){
     pr2_controllers_msgs::Pr2GripperCommandGoal squeeze;
     squeeze.command.position = 0.0;
-    squeeze.command.max_effort = 10.0;  // Close gently
+    squeeze.command.max_effort = 50.0;  // Close gently
     
     ROS_INFO("Sending squeeze goal");
     gripper_client_->sendGoal(squeeze);
