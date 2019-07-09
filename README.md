@@ -40,7 +40,7 @@ source devel/setup.bash
 - 第2章 ROSの準備
 - 第3章 ROSの仕組み
 - 第4章 可視化とデバッグ
-- 第5章 センサとアクチュエータ
+- [第5章 センサとアクチュエータ](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/chapter5)
 - [第6章 3Dモデリングと制御シミュレーション](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/chapter6)
 - [第7章 コンピュータビジョン](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/chapter7)
 - 第8章 ポイントクラウド
