@@ -49,8 +49,9 @@ source devel/setup.bash
 - [第11章 プラグインの開発](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/chapter11)
 - 第12章 テストコードの作成
 - [第13章 Travis CIとの連携](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/chapter13)
-- 第14章 MATLABとの統合
+- [第14章 MATLABとの統合](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/chapter14)
 - 第15章 システム統合(ロボットを使ってみよう)
+- [索引](https://github.com/Nishida-Lab/rosbook_pkgs/tree/master/index)
 
 ## BibTex
 ### 日本語
