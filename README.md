@@ -27,7 +27,7 @@ source devel/setup.bash
 ## 本の概要
 
 - タイトル：実用ロボット開発のためのROSプログラミング
-- 著者：[九工大 西田 健](http://lab.cntl.kyutech.ac.jp/~nishida/)，[安川電機(+九工大) 森田賢](http://lab.cntl.kyutech.ac.jp/~nishida/member-ja.html)，[玉川大 岡田浩 之](http://www.tamagawa.jp/graduate/brain/staff/labs/okada.html)，[千葉工大 原祥 尭](https://www.slideshare.net/hara-y?utm_campaign=profiletracking&utm_medium=sssite&utm_source=ssslideview)，[信州大 山崎 公俊](http://www.ais.shinshu-u.ac.jp/ja/)，[九工大 田向 権](http://www.brain.kyutech.ac.jp/~tamukoh/)，[東大 垣内 洋平](http://www.jsk.t.u-tokyo.ac.jp/~youhei/)，[千葉大 大川 一也](http://www.em.eng.chiba-u.jp/~okawa/index.php?%E5%A4%A7%E5%B7%9D%20%E4%B8%80%E4%B9%9F)，[TORK 齋藤功](https://opensource-robotics.tokyo.jp/)，[田中 良道](https://qiita.com/RyodoTanaka)，[有田 裕太](https://github.com/AriYu)，[石田 裕太郎](http://www.brain.kyutech.ac.jp/~tamukoh/member/isida/)
+- 著者：西田 健，森田 賢，岡田 浩之，原 祥尭，山崎 公俊，田向 権，垣内 洋平，大川 一也，齋藤 功，田中 良道，有田 裕太，石田 裕太郎
 - 出版日：2018/10/13
 - 出版社：森北出版
 - ISBN：978-4-627-67581-0
