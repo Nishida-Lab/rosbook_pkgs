@@ -10,6 +10,7 @@ jobs:
           - {ROS_DISTRO: "melodic",
             ROS_REPO: "main",
             OPT_VI: "-vi",
+            ROSDEP_SKIP_KEYS: "dynamixel_controllers",
             CATKIN_LINT: "true",
             CATKIN_LINT_ARGS: "--ignore unknown_package"}
 

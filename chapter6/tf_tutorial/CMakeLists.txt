@@ -43,6 +43,34 @@ target_link_libraries(tf2_listener ${catkin_LIBRARIES})
 #############
 ## Install ##
 #############
+set(EXEC_FILES
+  tf_broadcaster
+  tf2_broadcaster
+  tf2_static_broadcaster
+  tf_listener
+  tf2_listener
+)
+
+# Install executables
+foreach(nodes ${EXEC_FILES})
+  install(TARGETS ${nodes}
+    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+endforeach()
+
+# Python scripts
+set(PYTHON_SCRIPTS
+  scripts/tf2_broadcaster.py
+  scripts/tf2_listener.py
+  scripts/tf2_static_broadcaster.py
+  scripts/tf_broadcaster.py
+  scripts/tf_listener.py
+)
+
+foreach(scripts ${PYTHON_SCRIPTS})
+  catkin_install_python(PROGRAMS ${scripts}
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+endforeach()
+
 foreach(dir launch rviz)
   install(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
