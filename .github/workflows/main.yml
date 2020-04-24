@@ -13,7 +13,7 @@ jobs:
             ROSDEP_SKIP_KEYS: "dynamixel_controllers timed-roslaunch",
             UPSTREAM_WORKSPACE: ".actions.rosinstall",
             CATKIN_LINT: "true",
-            CATKIN_LINT_ARGS: "--ignore unknown_package"}
+            CATKIN_LINT_ARGS: "--ignore unknown_package duplicate_find"}
 
     runs-on: ubuntu-latest
     steps:
