@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>fourth_robot_gazebo</name>
   <version>1.0.0</version>
   <description>The fourth_robot_gazebo package</description>
@@ -13,9 +13,11 @@
   <url type="bugtracker">https://github.com/Nishida-Lab/rosbook_pkgs/issues</url>
   
   <buildtool_depend>catkin</buildtool_depend>
-  <run_depend>ros_control</run_depend>
-  <run_depend>gazebo_ros_control</run_depend>
-  <run_depend>gazebo_ros</run_depend>
-  <run_depend>fourth_robot_control</run_depend>
-  <run_depend>fourth_robot_description</run_depend>
+  <exec_depend>ros_control</exec_depend>
+  <exec_depend>gazebo_ros_control</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>fourth_robot_control</exec_depend>
+  <exec_depend>fourth_robot_description</exec_depend>
+
+  <test_depend>roslaunch</test_depend>
 </package>

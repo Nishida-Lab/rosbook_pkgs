@@ -170,6 +170,17 @@ include_directories(
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 
+# Python scripts
+set(PYTHON_SCRIPTS
+  scripts/listener.py
+  scripts/talker.py
+)
+
+foreach(scripts ${PYTHON_SCRIPTS})
+  catkin_install_python(PROGRAMS ${scripts}
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+endforeach()
+
 set(LAUNCH_DIRS launch)
 
 foreach(dir ${LAUNCH_DIRS})

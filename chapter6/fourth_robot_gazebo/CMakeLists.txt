@@ -2,10 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(fourth_robot_gazebo)
 find_package(catkin REQUIRED)
 
-catkin_package(
-  LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS fourth_robot_description fourth_robot_control
-)
+catkin_package()
 
 #############
 ## Install ##

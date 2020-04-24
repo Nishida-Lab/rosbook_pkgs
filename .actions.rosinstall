@@ -1,0 +1,9 @@
+- git:
+    local-name: timed_roslaunch
+    uri: https://github.com/MoriKen254/timed_roslaunch.git
+    version: melodic-devel
+- git:
+    local-name: dynamixel_motor
+    uri: https://github.com/arebgun/dynamixel_motor.git
+    version: master
+

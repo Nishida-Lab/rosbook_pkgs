@@ -2,19 +2,39 @@ cmake_minimum_required(VERSION 2.8.3)
 project(cloud_exercise)
 
 find_package(catkin REQUIRED COMPONENTS
-  pcl_conversions pcl_ros roscpp rospy sensor_msgs std_msgs geometry_msgs eigen_conversions
+  eigen_conversions
+  geometry_msgs
+  pcl_conversions
+  pcl_ros
+  roscpp
+  rospy
+  sensor_msgs
+  std_msgs
 )
 
 find_package(PCL REQUIRED)
 
-include_directories(include ${catkin_INCLUDE_DIRS} ${PCL_INCLUDE_DIRS})
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
+  ${PCL_INCLUDE_DIRS}
+)
 
 link_directories(${PCL_LIBRARY_DIRS})
 
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS pcl_conversions pcl_ros roscpp rospy sensor_msgs std_msgs geometry_msgs eigen_conversions
+  CATKIN_DEPENDS
+    eigen_conversions
+    geometry_msgs
+    pcl_conversions
+    pcl_ros
+    roscpp
+    rospy
+    sensor_msgs
+    std_msgs
+  DEPENDS PCL
 )
 
 add_executable(cloud_creator src/cloud_creator.cpp)
@@ -41,6 +61,26 @@ target_link_libraries(cloud_clusterer ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 #############
 ## Install ##
 #############
+
+set(EXEC_FILES
+  cloud_creator
+  cloud_matcher
+  cloud_loader
+  cloud_downsampler
+  cloud_filter
+  cloud_planar_segmenter
+  cloud_clusterer
+)
+# Install executables
+foreach(nodes ${EXEC_FILES})
+  install(TARGETS ${nodes}
+    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+endforeach()
+
+# Install include directory
+install(DIRECTORY include/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
+
 foreach(dir data launch rviz)
   install(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
