@@ -10,10 +10,11 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <depend>actionlib</depend>
-  <depend>actionlib_msgs</depend>
-  <depend>actionlib_tutorials</depend>
   <depend>rospy</depend>
-  <depend>std_msgs</depend>
+
+  <exec_depend>actionlib</exec_depend>
+  <exec_depend>actionlib_msgs</exec_depend>
+  <exec_depend>actionlib_tutorials</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
 
 </package>

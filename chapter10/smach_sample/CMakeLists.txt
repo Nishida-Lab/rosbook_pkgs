@@ -8,9 +8,6 @@ find_package(catkin REQUIRED COMPONENTS
   pr2_controllers_msgs
   roscpp
   rospy
-  smach
-  smach_ros
-  smach_msgs
 )
 
 catkin_package(
@@ -26,16 +23,47 @@ catkin_package(
 
 include_directories(${catkin_INCLUDE_DIRS})
 
+###########
+## Build ##
+###########
+
 add_executable(simple_gripper src/simple_gripper.cpp)
 target_link_libraries(simple_gripper ${catkin_LIBRARIES})
 
-# Install
+###########
+# Install #
+###########
+
+set(EXEC_FILES
+  simple_gripper
+)
+
+# Install executables
+foreach(nodes ${EXEC_FILES})
+  install(TARGETS ${nodes}
+    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+endforeach()
+
+# Python scripts
+set(PYTHON_SCRIPTS
+  script/smach_pr2.py
+  script/smach_sample.py
+)
+
+foreach(scripts ${PYTHON_SCRIPTS})
+  catkin_install_python(PROGRAMS ${scripts}
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+endforeach()
+
 foreach(dir launch script)
   install(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
 
-# Test
+#############
+## Testing ##
+#############
+
 if (CATKIN_ENABLE_TESTING)
   find_package(roslaunch REQUIRED)
   roslaunch_add_file_check(launch)
