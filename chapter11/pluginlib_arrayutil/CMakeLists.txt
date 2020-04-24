@@ -10,7 +10,6 @@ catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS pluginlib roscpp 
-  DEPENDS
 )
 
 include_directories(
@@ -37,12 +36,7 @@ install(FILES arrayutil_plugins.xml
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
 if (CATKIN_ENABLE_TESTING)
-  find_package(catkin REQUIRED COMPONENTS
-    rostest
-    pluginlib
-    roscpp
-    pluginlib_arrayutil
-  )
+  find_package(rostest REQUIRED)
 
   add_rostest_gtest(${PROJECT_NAME}_test
     test/pluginlib_arrayutil.test

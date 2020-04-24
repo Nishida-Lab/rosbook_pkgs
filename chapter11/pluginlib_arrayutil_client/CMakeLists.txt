@@ -23,6 +23,16 @@ target_link_libraries(client_node ${catkin_LIBRARIES})
 #############
 ## Install ##
 #############
+set(EXEC_FILES
+  client_node
+)
+
+# Install executables
+foreach(nodes ${EXEC_FILES})
+  install(TARGETS ${nodes}
+    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+endforeach()
+
 foreach(dir launch)
   install(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
