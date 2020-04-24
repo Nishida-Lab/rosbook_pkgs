@@ -36,7 +36,12 @@ install(FILES arrayutil_plugins.xml
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
 if (CATKIN_ENABLE_TESTING)
-  find_package(rostest REQUIRED)
+  find_package(catkin REQUIRED COMPONENTS
+    rostest
+    pluginlib
+    roscpp
+    pluginlib_arrayutil
+  )
 
   add_rostest_gtest(${PROJECT_NAME}_test
     test/pluginlib_arrayutil.test
