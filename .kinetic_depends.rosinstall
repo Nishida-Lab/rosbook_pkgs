@@ -1,0 +1,17 @@
+- git:
+    local-name: depend/pr2_controllers
+    uri: https://github.com/PR2/pr2_controllers.git
+    version: kinetic-devel
+- git:
+    local-name: depend/pr2_mechanism
+    uri: https://github.com/PR2/pr2_mechanism.git
+    version: kinetic-devel
+- git:
+    local-name: depend/pr2_mechanism_msgs
+    uri: https://github.com/PR2/pr2_mechanism_msgs.git
+    version: master
+- git:
+    local-name: depend/pr2_common
+    uri: https://github.com/PR2/pr2_common.git
+    version: kinetic-devel
+     
